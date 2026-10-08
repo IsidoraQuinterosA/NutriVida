@@ -1,4 +1,5 @@
 import TarjetaServicio from "../components/molecules/TarjetaServicio";
+import TarjetaServicioSinDuracion from "../components/molecules/TarjetaServicioSinDuracion";
 
 function Servicios() {
   return (
@@ -47,38 +48,33 @@ function Servicios() {
         />
 
 
-         <TarjetaServicio
+         <TarjetaServicioSinDuracion
           titulo="Plan pérdida de peso"
-           duracion={0}
           textoBoton="Agendar"
           valor="170.000"
         />
 
-         <TarjetaServicio
+         <TarjetaServicioSinDuracion
           titulo="Plan nutrición deportiva "
-          duracion={0}
           textoBoton="Agendar"
           valor="70.000"
         />
 
         
-         <TarjetaServicio
+         <TarjetaServicioSinDuracion
           titulo="Plan control diabetes / hipertensión"
-          duracion={0}
           textoBoton="Agendar"
           valor="75.000"
         />
 
-           <TarjetaServicio
+           <TarjetaServicioSinDuracion
           titulo="Plan alimentación vegetariana/vegana"
-          duracion={0}
           textoBoton="Agendar"
           valor="68.000"
         />
 
-            <TarjetaServicio
+            <TarjetaServicioSinDuracion
           titulo="Plan alimentación infantil"
-          duracion={0}
           textoBoton="Agendar"
           valor="65.000"
         />
