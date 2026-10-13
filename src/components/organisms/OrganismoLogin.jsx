@@ -45,6 +45,18 @@ function OrganismoLogin() {
               variante="primary"
             />
 
+
+
+
+
+
+          <div className="registro-boton">
+            <Boton
+              texto="registrarse"
+             onClick={() => navigate("/Registro")}
+            />
+          </div>
+
           </Form>
 
         </Col>
