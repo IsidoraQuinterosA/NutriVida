@@ -4,6 +4,8 @@ import Boton from "../atoms/Boton";
 import { useNavigate } from "react-router-dom";
 
 
+
+
 function OrganismoLogin() {
   const navigate = useNavigate();
 
@@ -44,6 +46,18 @@ function OrganismoLogin() {
               type="submit"
               variante="primary"
             />
+
+
+
+
+
+
+       <div className="registro-boton">
+            <Boton
+              texto="registrarse"
+             onClick={() => navigate("/Registro")}
+            />
+          </div>
 
           </Form>
 
