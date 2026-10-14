@@ -3,7 +3,7 @@ import Selector from "../atoms/Selector";
 function CampoSelector(props) {
   return (
     <div className="mb-3">
-      <label htmlFor={props.id} className="form-label">
+      <label htmlFor={props.id} className="form-label mb-1">
         {props.label}
       </label>
 
