@@ -39,7 +39,8 @@ function BarraNavegacion(props) {
             ))}
           </Nav>
 
-          <div className="d-flex gap-2 py-2 py-md-0">
+          {/* En celular los botones van uno bajo el otro y centrados; desde md, uno al lado del otro */}
+          <div className="d-flex flex-column flex-md-row align-items-center gap-2 py-2 py-md-0">
             <Boton
               texto="Iniciar sesión"
               variante="primary"
