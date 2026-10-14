@@ -1,12 +1,16 @@
 function Input(props) {
+  const type = props.type || "text";
+
   return (
     <input
-      type={props.type}
+      type={type}
       id={props.id}
       name={props.name}
       placeholder={props.placeholder}
-      className="form-control"
+      className={props.error ? "form-control is-invalid" : "form-control"}
       required={props.required}
+      value={props.value}
+      onChange={props.onChange}
     />
   );
 }

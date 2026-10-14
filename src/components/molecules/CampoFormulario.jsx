@@ -3,7 +3,7 @@ import Input from "../atoms/Input";
 function CampoFormulario(props) {
   return (
     <div className="mb-3">
-      <label htmlFor={props.id} className="form-label">
+      <label htmlFor={props.id} className="form-label mb-1">
         {props.label}
       </label>
 
@@ -13,8 +13,12 @@ function CampoFormulario(props) {
         name={props.name}
         placeholder={props.placeholder}
         required={props.required}
+        value={props.value}
+        onChange={props.onChange}
+        error={props.error}
       />
-      
+
+      {props.error && <div className="invalid-feedback">{props.error}</div>}
     </div>
   );
 }
