@@ -52,7 +52,11 @@ function OrganismoLogin() {
 
 
 
+<<<<<<< HEAD
+          <div className="registro-boton">
+=======
        <div className="registro-boton">
+>>>>>>> 5adda85307b7c1fe00111e76714231772dc70598
             <Boton
               texto="registrarse"
              onClick={() => navigate("/Registro")}
