@@ -13,8 +13,12 @@ function CampoFormulario(props) {
         name={props.name}
         placeholder={props.placeholder}
         required={props.required}
+        value={props.value}
+        onChange={props.onChange}
+        error={props.error}
       />
-      
+
+      {props.error && <div className="invalid-feedback">{props.error}</div>}
     </div>
   );
 }
