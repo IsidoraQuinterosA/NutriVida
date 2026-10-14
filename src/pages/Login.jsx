@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import LoginTemplate from "../components/templates/LoginTemplate";
+import PlantillaPrincipal from "../components/templates/PlantillaPrincipal";
 import OrganismoLogin from "../components/organisms/OrganismoLogin";
 import { useTituloPagina } from "../hooks/useTituloPagina";
 
@@ -17,12 +17,12 @@ function LoginPage() {
   }
 
   return (
-    <LoginTemplate>
+    <PlantillaPrincipal>
       <OrganismoLogin
         onEnviar={alIniciarSesion}
         onRegistrarse={alIrARegistro}
       />
-    </LoginTemplate>
+    </PlantillaPrincipal>
   );
 }
 

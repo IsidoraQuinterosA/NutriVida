@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import TipoServicio from "../components/molecules/TipoServicio";
+import PlantillaPrincipal from "../components/templates/PlantillaPrincipal";
 import { useTituloPagina } from "../hooks/useTituloPagina";
 
 function TiposServicios() {
@@ -11,6 +12,7 @@ function TiposServicios() {
   }
 
   return (
+    <PlantillaPrincipal>
     <div className="container py-5">
       <h1 className="text-center mb-5">Tipos de Servicios</h1>
 
@@ -45,6 +47,7 @@ function TiposServicios() {
         />
 </div>
 </div>
+    </PlantillaPrincipal>
   );
 }
 

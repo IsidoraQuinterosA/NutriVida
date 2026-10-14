@@ -47,8 +47,14 @@ function OrganismoLogin(props) {
     }
   }
 
+  // El enlace es un <a> real, pero en vez de recargar la página avisa a props.onRegistrarse
+  function irARegistro(evento) {
+    evento.preventDefault();
+    props.onRegistrarse();
+  }
+
   return (
-    <Container>
+    <Container className="py-5">
       <Row className="justify-content-center">
         <Col xs={12} md={6} lg={4}>
 
@@ -95,12 +101,10 @@ function OrganismoLogin(props) {
               variante="primary"
             />
 
-            <div className="registro-boton">
-              <Boton
-                texto="registrarse"
-                onClick={props.onRegistrarse}
-              />
-            </div>
+            <p className="mt-3 mb-0">
+              ¿No tienes cuenta?{" "}
+              <a href="/registro" onClick={irARegistro}>Regístrate</a>
+            </p>
 
           </form>
 

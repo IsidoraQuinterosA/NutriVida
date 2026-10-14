@@ -70,8 +70,14 @@ function FormularioRegistro(props) {
     }
   }
 
+  // El enlace es un <a> real, pero en vez de recargar la página avisa a props.onIniciarSesion
+  function irAIniciarSesion(evento) {
+    evento.preventDefault();
+    props.onIniciarSesion();
+  }
+
   return (
-    <Container>
+    <Container className="py-5">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
 
@@ -185,6 +191,11 @@ function FormularioRegistro(props) {
             />
 
             <Boton texto="Registrarse" type="submit" />
+
+            <p className="mt-3 mb-0">
+              ¿Ya tienes cuenta?{" "}
+              <a href="/login" onClick={irAIniciarSesion}>Inicia sesión</a>
+            </p>
 
           </form>
 

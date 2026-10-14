@@ -1,11 +1,13 @@
 import TarjetaServicio from "../components/molecules/TarjetaServicio";
 import TarjetaServicioSinDuracion from "../components/molecules/TarjetaServicioSinDuracion";
+import PlantillaPrincipal from "../components/templates/PlantillaPrincipal";
 import { useTituloPagina } from "../hooks/useTituloPagina";
 
 function Servicios() {
   useTituloPagina("Servicios");
 
   return (
+    <PlantillaPrincipal>
     <div className="container py-5">
       <h1 className="text-center mb-5">Nuestros Servicios</h1>
       
@@ -134,6 +136,7 @@ function Servicios() {
 
       </div>
     </div>
+    </PlantillaPrincipal>
   );
 }
 
