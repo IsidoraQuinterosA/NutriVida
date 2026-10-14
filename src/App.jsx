@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./components/organisms/OrganismoLogin";
+import Login from "./pages/Login";
 import TiposServicios from "./pages/TiposServicios";
 import Servicios from "./pages/Servicios";
 
-function App() {  
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -12,12 +12,12 @@ function App() {
           path="/"
           element={<Navigate to="/login" replace />}
         />
-     
-        <Route path="/login" element={<Login/>} />
-        
-        <Route path="/TiposServicios" element={<TiposServicios/>} />
 
-        <Route path="/Servicios" element={<Servicios/>} />
+        <Route path="/login" element={<Login/>} />
+
+        <Route path="/tipos-servicios" element={<TiposServicios/>} />
+
+        <Route path="/servicios" element={<Servicios/>} />
 
       </Routes>
     </BrowserRouter>

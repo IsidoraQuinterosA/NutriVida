@@ -11,7 +11,7 @@ function OrganismoLogin() {
 
   function manejarSubmit(event) {
     event.preventDefault();
-    navigate("/TiposServicios");
+    navigate("/tipos-servicios");
   }
 
   return (
@@ -50,7 +50,7 @@ function OrganismoLogin() {
             <div className="registro-boton">
               <Boton
                 texto="registrarse"
-                onClick={() => navigate("/Registro")}
+                onClick={() => navigate("/registro")}
               />
             </div>
 
