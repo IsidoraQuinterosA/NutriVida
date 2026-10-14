@@ -183,6 +183,36 @@
   }
 }
 
+.titulo-formulario {
+  color: #2b6cb0 !important;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.registro-boton {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+
+  & button {
+    width: 100%;
+    background-color: transparent;
+    color: #2b6cb0;
+    border: 2px solid #2b6cb0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #2b6cb0;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(43, 108, 176, 0.25);
+      transform: translateY(-1px);
+    }
+  }
+}
 
 .tarjeta-servicio {
   display: flex;
@@ -199,29 +229,28 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-}
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #2b6cb0; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-.tarjeta-servicio::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #2b6cb0; 
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+    border-color: #e2e8f0;
 
-.tarjeta-servicio:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
-  border-color: #e2e8f0;
-}
-
-.tarjeta-servicio:hover::before {
-  opacity: 1; 
+    &::before {
+      opacity: 1; 
+    }
+  }
 }
 
 .tarjeta-titulo {
@@ -236,17 +265,24 @@
   justify-content: center;
 }
 
+.tarjeta-etiquetas {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
 .precio {
   display: inline-flex;
- align-items: baseline;
+  align-items: baseline;
   justify-content: center;
   gap: 0.25rem;
   font-family: system-ui, -apple-system, sans-serif;
   color: #4a5568; 
   margin: 0.5rem 0;
 }
-
-
 
 .precio-valor {
   font-size: 1rem; 
@@ -262,14 +298,12 @@
   margin-top: 0; 
   color: #000000;
 }
+
 .tarjeta-contenedor-boton {
   width: 100%;
   margin-top: auto; 
   padding-top: 1rem;
 }
-
-
-
 
 .tipo-servicio {
   background-color: #ffffff;
@@ -284,12 +318,12 @@
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
 
-.tipo-servicio:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: #0d6efd;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #0d6efd;
+  }
 }
 
 .tipo-titulo {
@@ -300,23 +334,21 @@
   line-height: 1.3;
 }
 
-
 .tipo-contenedor-boton {
   width: 100%;
   display: flex;
   justify-content: center;
-}
 
+  & button {
+    width: 100%;
+    padding: 0.6rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.15s ease;
 
-.tipo-contenedor-boton button {
-  width: 100%;
-  padding: 0.6rem 1.25rem;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.tipo-contenedor-boton button:hover {
-  transform: scale(1.02);
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }

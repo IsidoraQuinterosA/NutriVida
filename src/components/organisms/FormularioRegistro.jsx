@@ -81,7 +81,7 @@ function FormularioRegistro(props) {
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
 
-          <h2>Crear cuenta</h2>
+          <h2 className="titulo-formulario">Crear cuenta</h2>
 
           <form onSubmit={manejarSubmit} noValidate>
 
@@ -192,10 +192,13 @@ function FormularioRegistro(props) {
 
             <Boton texto="Registrarse" type="submit" />
 
-            <p className="mt-3 mb-0">
+          <div className="registro-boton">
+            <p className="mb-0">
               ¿Ya tienes cuenta?{" "}
               <a href="/login" onClick={irAIniciarSesion}>Inicia sesión</a>
             </p>
+          </div>
+            
 
           </form>
 
