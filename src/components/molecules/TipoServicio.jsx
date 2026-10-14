@@ -1,21 +1,16 @@
-
 import Boton from "../atoms/Boton";
 import "../../App.css";
-import { useNavigate } from "react-router-dom";
 
-
-function TipoServicio({ titulo, textoBoton, ruta }) {
-  const navigate = useNavigate();
-
+function TipoServicio(props) {
   return (
- 
     <div className="tipo-servicio">
-      <h3 className="tipo-titulo">{titulo}</h3>
-      
+      <h3 className="tipo-titulo">{props.titulo}</h3>
+
       <div className="tipo-contenedor-boton">
-        <Boton texto={textoBoton}
-        onClick={() => navigate(ruta)} />
-        
+        <Boton
+          texto={props.textoBoton}
+          onClick={props.onSeleccionar}
+        />
       </div>
     </div>
   );
