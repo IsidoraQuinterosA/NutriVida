@@ -47,21 +47,12 @@ function OrganismoLogin() {
               variante="primary"
             />
 
-
-
-
-
-
-<<<<<<< HEAD
-          <div className="registro-boton">
-=======
-       <div className="registro-boton">
->>>>>>> 5adda85307b7c1fe00111e76714231772dc70598
-            <Boton
-              texto="registrarse"
-             onClick={() => navigate("/Registro")}
-            />
-          </div>
+            <div className="registro-boton">
+              <Boton
+                texto="registrarse"
+                onClick={() => navigate("/Registro")}
+              />
+            </div>
 
           </Form>
 
