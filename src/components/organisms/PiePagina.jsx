@@ -5,9 +5,9 @@ function PiePagina(props) {
   }
 
   return (
-    <footer className="bg-success text-white text-center py-3 mt-auto">
+    <footer className="bg-body-tertiary text-center py-3 mt-auto">
       <p className="mb-1">
-        <a href="/" onClick={irAlInicio} className="text-white text-decoration-none fw-bold">
+        <a href="/" onClick={irAlInicio} className="text-body text-decoration-none fw-bold">
           Clínica Nutricional NutriVida
         </a>
       </p>

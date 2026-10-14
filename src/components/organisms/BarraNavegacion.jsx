@@ -18,7 +18,7 @@ function BarraNavegacion(props) {
   return (
     // expand="md": en pantallas chicas los enlaces se esconden tras el botón ☰
     // collapseOnSelect: el menú ☰ se cierra solo al elegir un enlace
-    <Navbar expand="md" bg="success" data-bs-theme="dark" collapseOnSelect>
+    <Navbar expand="md" bg="body-tertiary" collapseOnSelect>
       <Container>
         <Navbar.Brand href="/" onClick={(e) => ir(e, "/")}>
           NutriVida
@@ -42,12 +42,12 @@ function BarraNavegacion(props) {
           <div className="d-flex gap-2 py-2 py-md-0">
             <Boton
               texto="Iniciar sesión"
-              variante="light"
+              variante="primary"
               onClick={() => props.onNavegar("/login")}
             />
             <Boton
               texto="Registrarse"
-              variante="outline-light"
+              variante="outline-primary"
               onClick={() => props.onNavegar("/registro")}
             />
           </div>
