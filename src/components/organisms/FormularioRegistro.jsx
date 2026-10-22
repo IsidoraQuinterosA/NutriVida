@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CampoFormulario from "../molecules/CampoFormulario";
-import CampoSelector from "../molecules/CampoSelector";
 import Boton from "../atoms/Boton";
 import {
   validarRun,
@@ -12,14 +11,7 @@ import {
   validarContrasena,
   validarConfirmarContrasena,
   validarDireccion,
-  validarRol,
 } from "../../utils/validaciones";
-
-const opcionesRol = [
-  { valor: "administrador", texto: "Administrador" },
-  { valor: "nutricionista", texto: "Nutricionista" },
-  { valor: "paciente", texto: "Paciente" },
-];
 
 function FormularioRegistro(props) {
   // Un estado por cada campo del formulario
@@ -32,7 +24,6 @@ function FormularioRegistro(props) {
   const [confirmarContrasena, setConfirmarContrasena] = useState("");
   const [telefono, setTelefono] = useState("");
   const [direccion, setDireccion] = useState("");
-  const [rol, setRol] = useState("");
 
   // Un solo estado con los mensajes de error de todos los campos
   const [errores, setErrores] = useState({});
@@ -51,7 +42,6 @@ function FormularioRegistro(props) {
       contrasena: validarContrasena(contrasena),
       confirmarContrasena: validarConfirmarContrasena(confirmarContrasena, contrasena),
       direccion: validarDireccion(direccion),
-      rol: validarRol(rol),
     };
 
     setErrores(nuevosErrores);
@@ -66,7 +56,8 @@ function FormularioRegistro(props) {
 
     // Solo si todo está correcto se avisa a la página
     if (formularioValido) {
-      props.onEnviar({ run, nombre, apellidos, correo, telefono, direccion, rol });
+      // El registro público siempre crea un paciente: los demás roles los asigna el administrador
+      props.onEnviar({ run, nombre, apellidos, correo, contrasena, telefono, direccion });
     }
   }
 
@@ -82,6 +73,10 @@ function FormularioRegistro(props) {
         <Col xs={12} md={8} lg={6}>
 
           <h2 className="titulo-formulario">Crear cuenta</h2>
+
+          {props.errorGeneral && (
+            <div className="alert alert-danger" role="alert">{props.errorGeneral}</div>
+          )}
 
           <form onSubmit={manejarSubmit} noValidate>
 
@@ -177,17 +172,6 @@ function FormularioRegistro(props) {
               value={direccion}
               onChange={(e) => setDireccion(e.target.value)}
               error={errores.direccion}
-            />
-
-            <CampoSelector
-              label="Rol"
-              id="rol"
-              name="rol"
-              textoInicial="Selecciona un rol"
-              opciones={opcionesRol}
-              value={rol}
-              onChange={(e) => setRol(e.target.value)}
-              error={errores.rol}
             />
 
             <Boton texto="Registrarse" type="submit" />
