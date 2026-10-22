@@ -3,8 +3,12 @@ import Boton from "../atoms/Boton";
 
 const enlaces = [
   { ruta: "/", texto: "Inicio" },
-  { ruta: "/tipos-servicios", texto: "Tipos de servicios" },
   { ruta: "/servicios", texto: "Servicios" },
+  { ruta: "/categorias", texto: "Categorías" },
+  { ruta: "/ofertas", texto: "Ofertas" },
+  { ruta: "/nosotros", texto: "Nosotros" },
+  { ruta: "/blog", texto: "Blog" },
+  { ruta: "/contacto", texto: "Contacto" },
 ];
 
 function BarraNavegacion(props) {
@@ -16,9 +20,9 @@ function BarraNavegacion(props) {
   }
 
   return (
-    // expand="md": en pantallas chicas los enlaces se esconden tras el botón ☰
+    // expand="lg": bajo 992px los enlaces se esconden tras el botón ☰
     // collapseOnSelect: el menú ☰ se cierra solo al elegir un enlace
-    <Navbar expand="md" bg="body-tertiary" collapseOnSelect>
+    <Navbar expand="lg" bg="body-tertiary" collapseOnSelect>
       <Container>
         <Navbar.Brand href="/" onClick={(e) => ir(e, "/")}>
           NutriVida
@@ -39,18 +43,41 @@ function BarraNavegacion(props) {
             ))}
           </Nav>
 
-          {/* En celular los botones van uno bajo el otro y centrados; desde md, uno al lado del otro */}
-          <div className="d-flex flex-column flex-md-row align-items-center gap-2 py-2 py-md-0">
+          {/* En celular los botones van uno bajo el otro y centrados; desde lg, uno al lado del otro */}
+          <div className="d-flex flex-column flex-lg-row align-items-center gap-2 py-2 py-lg-0">
             <Boton
-              texto="Iniciar sesión"
-              variante="primary"
-              onClick={() => props.onNavegar("/login")}
+              texto={"Mi solicitud (" + props.cantidadSolicitud + ")"}
+              variante="outline-secondary"
+              onClick={() => props.onNavegar("/mi-solicitud")}
             />
-            <Boton
-              texto="Registrarse"
-              variante="outline-primary"
-              onClick={() => props.onNavegar("/registro")}
-            />
+
+            {props.usuario ? (
+              <>
+                <Boton
+                  texto={"Mi panel (" + props.usuario.nombre + ")"}
+                  variante="primary"
+                  onClick={() => props.onNavegar(props.rutaPanel)}
+                />
+                <Boton
+                  texto="Cerrar sesión"
+                  variante="outline-primary"
+                  onClick={props.onCerrarSesion}
+                />
+              </>
+            ) : (
+              <>
+                <Boton
+                  texto="Iniciar sesión"
+                  variante="primary"
+                  onClick={() => props.onNavegar("/login")}
+                />
+                <Boton
+                  texto="Registrarse"
+                  variante="outline-primary"
+                  onClick={() => props.onNavegar("/registro")}
+                />
+              </>
+            )}
           </div>
         </Navbar.Collapse>
       </Container>
