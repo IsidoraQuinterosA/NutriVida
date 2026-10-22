@@ -11,6 +11,10 @@ function Input(props) {
       required={props.required}
       value={props.value}
       onChange={props.onChange}
+      min={props.min}
+      max={props.max}
+      step={props.step}
+      disabled={props.disabled}
     />
   );
 }

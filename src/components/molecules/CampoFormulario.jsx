@@ -16,6 +16,10 @@ function CampoFormulario(props) {
         value={props.value}
         onChange={props.onChange}
         error={props.error}
+        min={props.min}
+        max={props.max}
+        step={props.step}
+        disabled={props.disabled}
       />
 
       {props.error && <div className="invalid-feedback">{props.error}</div>}
