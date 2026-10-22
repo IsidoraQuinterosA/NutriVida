@@ -1,21 +1,13 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CampoFormulario from "../molecules/CampoFormulario";
-import CampoSelector from "../molecules/CampoSelector";
 import Boton from "../atoms/Boton";
-import { validarCorreo, validarContrasena, validarRol } from "../../utils/validaciones";
-
-const opcionesRol = [
-  { valor: "administrador", texto: "Administrador" },
-  { valor: "nutricionista", texto: "Nutricionista" },
-  { valor: "paciente", texto: "Paciente" },
-];
+import { validarCorreo, validarContrasena } from "../../utils/validaciones";
 
 function OrganismoLogin(props) {
   // Un estado por cada campo del formulario
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
-  const [rol, setRol] = useState("");
 
   // Un solo estado con los mensajes de error de todos los campos
   const [errores, setErrores] = useState({});
@@ -28,7 +20,6 @@ function OrganismoLogin(props) {
     const nuevosErrores = {
       correo: validarCorreo(correo),
       contrasena: validarContrasena(contrasena),
-      rol: validarRol(rol),
     };
 
     setErrores(nuevosErrores);
@@ -43,7 +34,7 @@ function OrganismoLogin(props) {
 
     // Solo si todo está correcto se avisa a la página
     if (formularioValido) {
-      props.onEnviar({ correo, rol });
+      props.onEnviar({ correo, contrasena });
     }
   }
 
@@ -59,6 +50,11 @@ function OrganismoLogin(props) {
         <Col xs={12} md={6} lg={4}>
 
           <h2>Iniciar sesión</h2>
+
+          {/* Error que avisa la página, por ejemplo: correo o contraseña incorrectos */}
+          {props.errorGeneral && (
+            <div className="alert alert-danger" role="alert">{props.errorGeneral}</div>
+          )}
 
           <form onSubmit={manejarSubmit} noValidate>
 
@@ -82,17 +78,6 @@ function OrganismoLogin(props) {
               value={contrasena}
               onChange={(e) => setContrasena(e.target.value)}
               error={errores.contrasena}
-            />
-
-            <CampoSelector
-              label="Rol"
-              id="rol"
-              name="rol"
-              textoInicial="Selecciona un rol"
-              opciones={opcionesRol}
-              value={rol}
-              onChange={(e) => setRol(e.target.value)}
-              error={errores.rol}
             />
 
             <Boton

@@ -1,11 +1,14 @@
 function Boton(props) {
   const variante = props.variante || "primary";
+  // tamano="sm" hace un botón chico (útil en tablas)
+  const tamano = props.tamano ? " btn-" + props.tamano : "";
 
   return (
     <button
       type={props.type || "button"}
-      className={`btn btn-${variante} w-auto`}
+      className={`btn btn-${variante}${tamano} w-auto`}
       onClick={props.onClick}
+      disabled={props.disabled}
     >
       {props.texto}
     </button>
