@@ -1,10 +1,15 @@
 import PlantillaPanel from "../../components/templates/PlantillaPanel";
+import PerfilAdmin from "../../components/organisms/PerfilAdmin";
+import { useTituloPagina } from "../../hooks/useTituloPagina";
+import { useSesion } from "../../hooks/useSesion";
 
-// Página en construcción. Se reemplaza completa más adelante.
 function Perfil() {
+  const sesion = useSesion();
+  useTituloPagina("Mi perfil");
+
   return (
     <PlantillaPanel titulo="Mi perfil">
-      <p>En construcción.</p>
+      <PerfilAdmin usuario={sesion.usuario} />
     </PlantillaPanel>
   );
 }
