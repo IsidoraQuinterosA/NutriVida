@@ -1,16 +1,12 @@
 import React from 'react';
 
 function EtiquetaModalidad(props) {
-  const esPresencial = props.modalidad?.toLowerCase() === 'presencial';
 
-  const texto = esPresencial ? 'Presencial' : 'Online';
-  const claseColor = esPresencial ? 'bg-success' : 'bg-primary';
+  const modalidad =  props.modalidad || "Presencial";
+  const esPresencial = modalidad.toLowerCase().startsWith("presencial");
+  const claseColor = esPresencial ? "text-bg-success" : "text-bg-primary";
 
-  return (
-    <span className={`badge ${claseColor}`}>
-      {texto}
-    </span>
-  );
+  return <span className={"badge " + claseColor}>{modalidad}</span>;
 }
 
 export default EtiquetaModalidad;
