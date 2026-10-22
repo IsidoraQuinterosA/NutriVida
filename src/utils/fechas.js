@@ -11,3 +11,9 @@ export function fechaHoyISO() {
   const dia = String(hoy.getDate()).padStart(2, "0");
   return hoy.getFullYear() + "-" + mes + "-" + dia;
 }
+
+// Ordena las citas de la más antigua a la más nueva (por fecha y luego por hora).
+// No modifica la lista original: devuelve una copia ordenada.
+export function ordenarCitas(citas) {
+  return [...citas].sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
+}
