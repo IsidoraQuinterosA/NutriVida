@@ -106,3 +106,64 @@ export function validarRol(rol) {
 
   return "";
 }
+
+// ----- Validaciones generales (formularios del panel) -----
+
+export function validarObligatorio(valor, nombreCampo) {
+  if (String(valor).trim() === "") return "El campo " + nombreCampo + " es obligatorio.";
+
+  return "";
+}
+
+export function validarNumeroPositivo(valor, nombreCampo) {
+  if (String(valor).trim() === "") return "El campo " + nombreCampo + " es obligatorio.";
+  if (isNaN(Number(valor)) || Number(valor) <= 0) return "El campo " + nombreCampo + " debe ser un número mayor a 0.";
+
+  return "";
+}
+
+// ----- Validaciones de la cita -----
+
+export function validarNutricionista(nutricionistaId) {
+  if (nutricionistaId === "") return "Debes elegir un nutricionista.";
+
+  return "";
+}
+
+// fecha viene como "AAAA-MM-DD". hoy se puede pasar para poder probar la función.
+export function validarFechaCita(fecha, nutricionista, hoy) {
+  if (fecha === "") return "Debes elegir una fecha.";
+  if (!nutricionista) return "Primero elige un nutricionista.";
+  if (fecha < hoy) return "La fecha no puede ser anterior a hoy.";
+
+  // getDay(): 0 = domingo, 1 = lunes ... 6 = sábado
+  const dia = new Date(fecha + "T00:00:00").getDay();
+
+  if (!nutricionista.dias.includes(dia)) {
+    return nutricionista.nombre + " no atiende ese día. Atiende: " + nutricionista.diasTexto + ".";
+  }
+
+  return "";
+}
+
+// hora viene como "HH:MM". Como tienen el mismo formato, se pueden comparar como texto.
+export function validarHoraCita(hora, nutricionista) {
+  if (hora === "") return "Debes elegir una hora.";
+  if (!nutricionista) return "Primero elige un nutricionista.";
+
+  if (hora < nutricionista.horaInicio || hora >= nutricionista.horaFin) {
+    return "La hora debe estar entre " + nutricionista.horaInicio + " y " + nutricionista.horaFin + ".";
+  }
+
+  return "";
+}
+
+export function validarMotivo(motivo) {
+  const valor = motivo.trim();
+
+  if (valor === "") return "Cuéntanos el motivo de tu consulta.";
+  if (valor.length < 10) return "Describe el motivo con al menos 10 caracteres.";
+  if (valor.length > 300) return "El motivo no puede superar los 300 caracteres.";
+
+  return "";
+}
