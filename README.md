@@ -1,4 +1,4 @@
-# Nombre del Equipo
+# Equipo 6
 
 ## Integrantes
 - Jairo Cid (correo@duocuc.cl)
