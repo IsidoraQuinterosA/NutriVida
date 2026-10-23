@@ -6,7 +6,7 @@ function BarraFiltros(props) {
   const opciones = props.categorias.map((categoria) => ({ valor: categoria.id, texto: categoria.nombre }));
 
   return (
-    <div className="row g-2 mb-4 justify-content-center">
+    <div className="row g-2 mb-4 justify-content-center barra-filtros">
       <div className="col-12 col-md-6">
         <CampoBusqueda
           placeholder="Buscar servicio por nombre"

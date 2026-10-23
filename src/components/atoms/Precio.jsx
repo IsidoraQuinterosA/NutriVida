@@ -8,7 +8,7 @@ function Precio(props) {
           {formatearPrecio(props.precioAnterior)}
         </span>
       )}
-      <span className="precio-valor">{formatearPrecio(props.valor)}</span>
+      <span className={props.precioAnterior ? "precio-valor precio-oferta" : "precio-valor"}>{formatearPrecio(props.valor)}</span>
     </p>
   );
 }

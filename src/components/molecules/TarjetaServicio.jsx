@@ -9,7 +9,8 @@ function TarjetaServicio(props) {
   const enOferta = props.precioOferta !== null && props.precioOferta !== undefined;
 
   return (
-    <div className="tarjeta-servicio">
+    <div className={enOferta ? "tarjeta-servicio en-oferta" : "tarjeta-servicio"}>
+      {enOferta && <span className="cinta-oferta" aria-hidden="true">OFERTA</span>}
       <h3 className="tarjeta-titulo">{props.titulo}</h3>
 
       <div className="tarjeta-etiquetas">
