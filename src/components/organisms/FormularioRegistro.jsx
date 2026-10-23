@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CampoFormulario from "../molecules/CampoFormulario";
 import Boton from "../atoms/Boton";
+import Logo from "../atoms/Logo";
 import {
   validarRun,
   validarNombre,
@@ -64,6 +65,7 @@ function FormularioRegistro(props) {
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
 
+          <Logo tamano="mediano" alt="" />
           <h2 className="titulo-formulario">Crear cuenta</h2>
 
           {props.errorGeneral && (
