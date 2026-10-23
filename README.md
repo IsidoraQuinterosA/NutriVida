@@ -1,9 +1,9 @@
 # Equipo 6
 
 ## Integrantes
-- Jairo Cid (correo@duocuc.cl)
+- Jairo Cid (jair.cid@duocuc.cl)
 - Anita Olivares (anit.olivares@duocuc.cl)
-- Isidora Quinteros (correo@duocuc.cl)
+- Isidora Quinteros (isi.quinteros@duocuc.cl)
 
 ## Caso
 Clínica Nutricional NutriVida (Forma D)
