@@ -1,3 +1,5 @@
+import Logo from "../atoms/Logo";
+
 function PiePagina(props) {
   function irAlInicio(evento) {
     evento.preventDefault();
@@ -6,6 +8,7 @@ function PiePagina(props) {
 
   return (
     <footer className="bg-body-tertiary text-center py-3 mt-auto">
+      <Logo tamano="chico" alt="" />
       <p className="mb-1">
         <a href="/" onClick={irAlInicio} className="text-body text-decoration-none fw-bold">
           Clínica Nutricional NutriVida

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CampoFormulario from "../molecules/CampoFormulario";
 import Boton from "../atoms/Boton";
+import Logo from "../atoms/Logo";
 import { validarCorreo, validarContrasena } from "../../utils/validaciones";
 
 function OrganismoLogin(props) {
@@ -42,6 +43,7 @@ function OrganismoLogin(props) {
       <Row className="justify-content-center">
         <Col xs={12} md={6} lg={4}>
 
+          <Logo tamano="mediano" alt="" />
           <h2>Iniciar sesión</h2>
 
           {props.errorGeneral && (

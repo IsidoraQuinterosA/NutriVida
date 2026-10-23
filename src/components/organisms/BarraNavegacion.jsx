@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Boton from "../atoms/Boton";
+import Logo from "../atoms/Logo";
 
 const enlaces = [
   { ruta: "/", texto: "Inicio" },
@@ -20,7 +21,8 @@ function BarraNavegacion(props) {
   return (
     <Navbar expand="lg" bg="body-tertiary" collapseOnSelect>
       <Container>
-        <Navbar.Brand href="/" onClick={(e) => ir(e, "/")}>
+        <Navbar.Brand href="/" onClick={(e) => ir(e, "/")} className="d-flex align-items-center gap-2">
+          <Logo tamano="chico" alt="" />
           NutriVida
         </Navbar.Brand>
 
