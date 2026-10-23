@@ -1,16 +1,9 @@
-import { formatearPrecio } from "../../utils/precios";
+import { calcularPorcentajeDescuento } from "../../utils/precios";
 
-function Precio(props) {
-  return (
-    <p className="precio mb-0">
-      {props.precioAnterior && (
-        <span className="text-decoration-line-through text-body-secondary me-2">
-          {formatearPrecio(props.precioAnterior)}
-        </span>
-      )}
-      <span className="precio-valor">{formatearPrecio(props.valor)}</span>
-    </p>
-  );
+function EtiquetaOferta(props) {
+  const porcentaje = calcularPorcentajeDescuento(props.precio, props.precioOferta);
+
+  return <span className="badge text-bg-danger">Oferta -{porcentaje}%</span>;
 }
 
-export default Precio;
+export default EtiquetaOferta;
