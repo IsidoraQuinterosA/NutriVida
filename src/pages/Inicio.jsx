@@ -1,8 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import PlantillaPrincipal from "../components/templates/PlantillaPrincipal";
 import Bienvenida from "../components/organisms/Bienvenida";
 import PorQueElegirnos from "../components/organisms/PorQueElegirnos";
+import ListaCategorias from "../components/organisms/ListaCategorias";
+import InfoContacto from "../components/organisms/InfoContacto";
 import { useTituloPagina } from "../hooks/useTituloPagina";
+import { listarCategorias } from "../services/categoriasService";
+import { clinica } from "../data/clinica";
 
 const beneficios = [
   {
@@ -40,6 +45,27 @@ function Inicio() {
         titulo="¿Por qué elegirnos?"
         beneficios={beneficios}
       />
+
+      <section className="bg-light py-5">
+        <Container>
+          <h2 className="mb-4">Nuestras categorías</h2>
+          <ListaCategorias
+            categorias={listarCategorias()}
+            onSeleccionar={(id) => navigate("/categorias/" + id)}
+          />
+        </Container>
+      </section>
+
+      <section className="py-5">
+        <Container>
+          <h2 className="mb-4">Contacto</h2>
+          <Row className="justify-content-center">
+            <Col xs={12} md={8} lg={6}>
+              <InfoContacto clinica={clinica} />
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </PlantillaPrincipal>
   );
 }
