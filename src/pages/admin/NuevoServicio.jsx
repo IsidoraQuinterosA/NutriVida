@@ -1,10 +1,34 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PlantillaPanel from "../../components/templates/PlantillaPanel";
+import FormularioServicio from "../../components/organisms/FormularioServicio";
+import { useTituloPagina } from "../../hooks/useTituloPagina";
+import { crearServicio } from "../../services/serviciosService";
+import { listarCategorias } from "../../services/categoriasService";
 
-// Página en construcción. Se reemplaza completa más adelante.
 function NuevoServicio() {
+  const navigate = useNavigate();
+  const [errorGeneral, setErrorGeneral] = useState("");
+  useTituloPagina("Nuevo servicio");
+
+  function guardar(datos) {
+    try {
+      crearServicio(datos);
+      navigate("/admin/servicios");
+    } catch (error) {
+      // Por ejemplo: ya existe un servicio con ese código
+      setErrorGeneral(error.message);
+    }
+  }
+
   return (
     <PlantillaPanel titulo="Nuevo servicio">
-      <p>En construcción.</p>
+      <FormularioServicio
+        categorias={listarCategorias()}
+        errorGeneral={errorGeneral}
+        onEnviar={guardar}
+        onCancelar={() => navigate("/admin/servicios")}
+      />
     </PlantillaPanel>
   );
 }
