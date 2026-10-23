@@ -1,3 +1,39 @@
+:root {
+  --verde-hoja: #2f8f68;
+  --verde-claro: #8fcbaa;
+  --verde: #23775a;
+  --verde-hover: #1a5c45;
+  --verde-oscuro: #173a2d;
+  --verde-suave: #edf6f2;
+  --ciruela-profundo: #4c1f4a;
+  --ciruela: #7a2e72;
+  --ciruela-hover: #5c2555;
+  --ciruela-claro: #e9c9e4;
+  --ciruela-suave: #f6eaf4;
+  --texto: #18291f;
+  --texto-suave: #465a50;
+  --borde: #d3e7dd;
+  --fondo: #fbfcfb;
+  --blanco: #ffffff;
+  --ambar-suave: #fff3d6;
+  --ambar: #7a5200;
+  --rojo: #b42318;
+  --sombra: 0 10px 30px -18px rgba(23, 58, 45, 0.35);
+  --sombra-alta: 0 18px 36px -18px rgba(23, 58, 45, 0.45);
+  --radio: 18px;
+  --fuente: "Outfit", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --bs-body-font-family: var(--fuente);
+  --bs-body-color: var(--texto);
+  --bs-body-bg: var(--fondo);
+  --bs-secondary-color: var(--texto-suave);
+  --bs-border-color: var(--borde);
+  --bs-primary-rgb: 35, 119, 90;
+  --bs-link-color-rgb: 35, 119, 90;
+  --bs-link-hover-color-rgb: 122, 46, 114;
+  --bs-tertiary-bg: var(--blanco);
+}
+
 body {
   margin: 0;
 }
@@ -11,30 +47,29 @@ body {
 }
 
 h1,
+h2,
+h3,
+h4 {
+  color: var(--verde-oscuro);
+  text-wrap: balance;
+}
+
+h1,
 h2 {
-  font-weight: 500;
+  font-weight: 800;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.75rem;
 }
 
 p {
