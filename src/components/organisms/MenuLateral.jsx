@@ -1,5 +1,3 @@
-// Menú del panel (paciente, nutricionista o administrador).
-// Recibe la lista de enlaces y la ruta actual para marcar el enlace activo.
 function MenuLateral(props) {
   function ir(evento, ruta) {
     evento.preventDefault();

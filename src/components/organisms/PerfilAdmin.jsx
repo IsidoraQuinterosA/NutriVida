@@ -1,6 +1,5 @@
 import EtiquetaRol from "../atoms/EtiquetaRol";
 
-// Datos de quien administra (vienen de la sesión)
 function PerfilAdmin(props) {
   return (
     <div className="card">

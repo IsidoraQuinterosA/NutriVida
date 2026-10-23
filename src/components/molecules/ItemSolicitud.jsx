@@ -1,7 +1,6 @@
 import Boton from "../atoms/Boton";
 import { formatearPrecio } from "../../utils/precios";
 
-// Un servicio dentro de la solicitud en curso, con su cantidad y subtotal
 function ItemSolicitud(props) {
   return (
     <li className="list-group-item d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">

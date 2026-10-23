@@ -17,7 +17,6 @@ function ConfirmarCita() {
   const solicitud = useSolicitud();
   useTituloPagina("Confirmar cita");
 
-  // Si hay sesión, los datos de la persona se completan solos
   const datosIniciales = {
     nombre: sesion.usuario ? sesion.usuario.nombre : "",
     apellidos: sesion.usuario ? sesion.usuario.apellidos : "",
@@ -28,7 +27,6 @@ function ConfirmarCita() {
     try {
       const cita = crearCita({ ...datos, servicios: solicitud.items, total: solicitud.total });
       solicitud.limpiar();
-      // state: datos que viajan a la siguiente página sin ponerlos en la dirección
       navigate("/cita-exitosa", { state: { cita } });
     } catch (error) {
       navigate("/cita-error", { state: { mensaje: error.message } });

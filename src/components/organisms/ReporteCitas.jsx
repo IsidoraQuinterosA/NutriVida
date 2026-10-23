@@ -2,7 +2,6 @@ import { Row, Col } from "react-bootstrap";
 import EtiquetaEstado from "../atoms/EtiquetaEstado";
 import { formatearPrecio } from "../../utils/precios";
 
-// Estadísticas básicas que pide el caso: atenciones, inasistencia y distribución por nutricionista
 function ReporteCitas(props) {
   return (
     <>

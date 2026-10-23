@@ -6,7 +6,6 @@ import { useTituloPagina } from "../../hooks/useTituloPagina";
 import { obtenerCita, cambiarEstado } from "../../services/citasService";
 import { obtenerNutricionista } from "../../services/nutricionistasService";
 
-// Ruta: /admin/citas/:id
 function ComprobanteCitaPagina() {
   const navigate = useNavigate();
   const params = useParams();

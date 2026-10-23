@@ -3,7 +3,6 @@ import Boton from "../atoms/Boton";
 import ResumenServicios from "./ResumenServicios";
 import { formatearFecha } from "../../utils/fechas";
 
-// Comprobante (ficha) de una cita, con las acciones que puede hacer la secretaria o el admin
 function ComprobanteCita(props) {
   const cita = props.cita;
 

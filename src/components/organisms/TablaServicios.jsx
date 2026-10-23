@@ -1,7 +1,6 @@
 import FilaServicio from "../molecules/FilaServicio";
 
 function TablaServicios(props) {
-  // Busca el nombre de la categoría a partir de su id
   function nombreCategoria(id) {
     const categoria = props.categorias.find((c) => c.id === id);
     return categoria ? categoria.nombre : id;

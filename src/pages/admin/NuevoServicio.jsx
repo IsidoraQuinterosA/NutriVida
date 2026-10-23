@@ -16,7 +16,6 @@ function NuevoServicio() {
       crearServicio(datos);
       navigate("/admin/servicios");
     } catch (error) {
-      // Por ejemplo: ya existe un servicio con ese código
       setErrorGeneral(error.message);
     }
   }

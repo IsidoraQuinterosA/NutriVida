@@ -7,7 +7,6 @@ import { listarPorPaciente } from "../../services/citasService";
 import { agregarNombreNutricionista } from "../../services/nutricionistasService";
 import { ordenarCitas } from "../../utils/fechas";
 
-// Ruta: /admin/usuarios/:id/historial  — todas las citas que ha pedido un paciente
 function HistorialUsuarioPagina() {
   const navigate = useNavigate();
   const params = useParams();

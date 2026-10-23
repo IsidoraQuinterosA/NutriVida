@@ -5,18 +5,14 @@ import Boton from "../atoms/Boton";
 import { validarCorreo, validarContrasena } from "../../utils/validaciones";
 
 function OrganismoLogin(props) {
-  // Un estado por cada campo del formulario
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
 
-  // Un solo estado con los mensajes de error de todos los campos
   const [errores, setErrores] = useState({});
 
   function manejarSubmit(evento) {
-    // Evita que el navegador recargue la página
     evento.preventDefault();
 
-    // Se validan TODOS los campos para mostrar todos los errores juntos
     const nuevosErrores = {
       correo: validarCorreo(correo),
       contrasena: validarContrasena(contrasena),
@@ -24,7 +20,6 @@ function OrganismoLogin(props) {
 
     setErrores(nuevosErrores);
 
-    // Si algún mensaje tiene texto, el formulario no es válido
     let formularioValido = true;
     for (const campo in nuevosErrores) {
       if (nuevosErrores[campo] !== "") {
@@ -32,13 +27,11 @@ function OrganismoLogin(props) {
       }
     }
 
-    // Solo si todo está correcto se avisa a la página
     if (formularioValido) {
       props.onEnviar({ correo, contrasena });
     }
   }
 
-  // El enlace es un <a> real, pero en vez de recargar la página avisa a props.onRegistrarse
   function irARegistro(evento) {
     evento.preventDefault();
     props.onRegistrarse();
@@ -51,7 +44,6 @@ function OrganismoLogin(props) {
 
           <h2>Iniciar sesión</h2>
 
-          {/* Error que avisa la página, por ejemplo: correo o contraseña incorrectos */}
           {props.errorGeneral && (
             <div className="alert alert-danger" role="alert">{props.errorGeneral}</div>
           )}

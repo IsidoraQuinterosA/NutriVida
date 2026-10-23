@@ -16,7 +16,6 @@ import { nombresDeRol } from "../../utils/roles";
 
 const opcionesRol = Object.keys(nombresDeRol).map((rol) => ({ valor: rol, texto: nombresDeRol[rol] }));
 
-// Crear o editar un usuario y asignarle un rol. Solo lo usa el administrador.
 function FormularioUsuario(props) {
   const inicial = props.usuarioInicial;
   const esEdicion = Boolean(inicial);
@@ -42,10 +41,8 @@ function FormularioUsuario(props) {
       nombre: validarNombre(nombre),
       apellidos: validarApellidos(apellidos),
       correo: validarCorreo(correo),
-      // Al editar, la contraseña se puede dejar vacía para no cambiarla
       contrasena: esEdicion && contrasena === "" ? "" : validarContrasena(contrasena),
       rol: validarRol(rol),
-      // Solo los nutricionistas necesitan estar unidos a un perfil del directorio
       nutricionistaId: rol === "nutricionista" ? validarNutricionista(nutricionistaId) : "",
     };
     setErrores(nuevosErrores);

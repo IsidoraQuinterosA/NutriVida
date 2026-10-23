@@ -1,4 +1,3 @@
-// Interruptor para activar o desactivar algo
 function Interruptor(props) {
   return (
     <div className="form-check form-switch d-inline-block">

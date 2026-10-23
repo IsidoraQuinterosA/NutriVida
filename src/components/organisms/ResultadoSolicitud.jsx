@@ -2,7 +2,6 @@ import Boton from "../atoms/Boton";
 import ResumenServicios from "./ResumenServicios";
 import { formatearFecha } from "../../utils/fechas";
 
-// Resultado de confirmar la cita: éxito (con número y resumen) o error (con aviso)
 function ResultadoSolicitud(props) {
   return (
     <div className="py-4">

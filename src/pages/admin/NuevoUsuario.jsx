@@ -16,7 +16,6 @@ function NuevoUsuario() {
       crearUsuario(datos);
       navigate("/admin/usuarios");
     } catch (error) {
-      // Por ejemplo: ya existe una cuenta con ese correo
       setErrorGeneral(error.message);
     }
   }

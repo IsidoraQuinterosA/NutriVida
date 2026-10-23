@@ -20,7 +20,6 @@ describe("ListaSolicitud", () => {
     const onQuitar = vi.fn();
     render(<ListaSolicitud items={items} total={60500} onCambiarCantidad={() => {}} onQuitar={onQuitar} />);
 
-    // Hay un botón Quitar por servicio: se presiona el segundo
     await userEvent.click(screen.getAllByRole("button", { name: "Quitar" })[1]);
 
     expect(onQuitar).toHaveBeenCalledWith("TG001");

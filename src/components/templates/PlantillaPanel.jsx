@@ -5,8 +5,6 @@ import MenuLateral from "../organisms/MenuLateral";
 import { useSesion } from "../../hooks/useSesion";
 import { menus } from "../../data/menus";
 
-// Plantilla de los paneles privados: la estructura de PlantillaPrincipal
-// más un menú lateral con los enlaces del rol de quien inició sesión.
 function PlantillaPanel(props) {
   const navigate = useNavigate();
   const ubicacion = useLocation();

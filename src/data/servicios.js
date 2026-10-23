@@ -1,7 +1,3 @@
-// Catálogo de servicios y planes de NutriVida (Forma D).
-// duracion: minutos, o null si el servicio no tiene una duración fija (planes).
-// precioOferta: precio con descuento, o null si no está en oferta. (Ofertas ficticias.)
-// cupos: cupos disponibles esta semana. Si quedan 3 o menos, el servicio es "crítico". (Dato ficticio.)
 export const servicios = [
   { codigo: "CN001", categoria: "consulta", nombre: "Primera consulta nutricional", duracion: 50, modalidad: "Presencial", precio: 35000, precioOferta: null, cupos: 12, descripcion: "Evaluación inicial: anamnesis, antropometría completa y diseño del primer plan alimenticio." },
   { codigo: "CN002", categoria: "consulta", nombre: "Control nutricional (seguimiento)", duracion: 30, modalidad: "Presencial", precio: 25000, precioOferta: null, cupos: 20, descripcion: "Seguimiento mensual: medición de indicadores y ajuste del plan vigente." },

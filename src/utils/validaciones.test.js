@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { validarRun, validarFechaCita, validarHoraCita } from "./validaciones";
 
-// Nutricionista de prueba: atiende lunes, miércoles y viernes de 09:00 a 17:00
 const carolina = {
   nombre: "Nut. Carolina Fuentes M.",
   dias: [1, 3, 5],
@@ -22,7 +21,6 @@ describe("validarRun", () => {
 
 describe("validarFechaCita", () => {
   it("rechaza un día en que el nutricionista no atiende", () => {
-    // 2026-10-27 es martes
     expect(validarFechaCita("2026-10-27", carolina, "2026-10-21")).toContain("no atiende ese día");
   });
 
@@ -31,7 +29,6 @@ describe("validarFechaCita", () => {
   });
 
   it("acepta un día de atención desde hoy en adelante", () => {
-    // 2026-10-26 es lunes
     expect(validarFechaCita("2026-10-26", carolina, "2026-10-21")).toBe("");
   });
 });

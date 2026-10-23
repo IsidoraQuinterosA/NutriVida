@@ -14,7 +14,6 @@ import {
 } from "../../utils/validaciones";
 
 function FormularioRegistro(props) {
-  // Un estado por cada campo del formulario
   const [run, setRun] = useState("");
   const [nombre, setNombre] = useState("");
   const [apellidos, setApellidos] = useState("");
@@ -25,14 +24,11 @@ function FormularioRegistro(props) {
   const [telefono, setTelefono] = useState("");
   const [direccion, setDireccion] = useState("");
 
-  // Un solo estado con los mensajes de error de todos los campos
   const [errores, setErrores] = useState({});
 
   function manejarSubmit(evento) {
-    // Evita que el navegador recargue la página
     evento.preventDefault();
 
-    // Se validan TODOS los campos para mostrar todos los errores juntos
     const nuevosErrores = {
       run: validarRun(run),
       nombre: validarNombre(nombre),
@@ -46,7 +42,6 @@ function FormularioRegistro(props) {
 
     setErrores(nuevosErrores);
 
-    // Si algún mensaje tiene texto, el formulario no es válido
     let formularioValido = true;
     for (const campo in nuevosErrores) {
       if (nuevosErrores[campo] !== "") {
@@ -54,14 +49,11 @@ function FormularioRegistro(props) {
       }
     }
 
-    // Solo si todo está correcto se avisa a la página
     if (formularioValido) {
-      // El registro público siempre crea un paciente: los demás roles los asigna el administrador
       props.onEnviar({ run, nombre, apellidos, correo, contrasena, telefono, direccion });
     }
   }
 
-  // El enlace es un <a> real, pero en vez de recargar la página avisa a props.onIniciarSesion
   function irAIniciarSesion(evento) {
     evento.preventDefault();
     props.onIniciarSesion();

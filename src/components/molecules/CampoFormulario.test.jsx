@@ -6,7 +6,6 @@ describe("CampoFormulario", () => {
   it("une la etiqueta con su caja de texto", () => {
     render(<CampoFormulario label="Correo electrónico" id="correo" value="" onChange={() => {}} />);
 
-    // getByLabelText solo encuentra la caja si el label está bien conectado (htmlFor = id)
     expect(screen.getByLabelText("Correo electrónico")).toBeInTheDocument();
   });
 

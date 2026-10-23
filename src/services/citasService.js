@@ -1,4 +1,3 @@
-// CRUD de citas (la "solicitud" de NutriVida), con persistencia en localStorage.
 import { citas as citasIniciales } from "../data/citas";
 import { leer, guardar } from "./almacenamiento";
 
@@ -20,7 +19,6 @@ export function listarPorNutricionista(nutricionistaId) {
   return listarCitas().filter((cita) => cita.nutricionistaId === nutricionistaId);
 }
 
-// Revisa si el nutricionista ya tiene otra cita activa en esa fecha y hora.
 function horarioOcupado(lista, nutricionistaId, fecha, hora, idIgnorado) {
   return lista.some(
     (cita) =>
@@ -74,7 +72,6 @@ export function reprogramarCita(id, fecha, hora) {
     throw new Error("El nutricionista ya tiene una cita en ese horario. Elige otra hora.");
   }
 
-  // Al reprogramar, la cita vuelve a quedar pendiente de confirmación
   return actualizarCita(id, { fecha, hora, estado: "pendiente" });
 }
 

@@ -1,4 +1,3 @@
-// Plan alimenticio vigente de un paciente
 function PlanAlimenticio(props) {
   if (!props.plan) {
     return <p className="text-body-secondary">Todavía no tienes un plan alimenticio asignado.</p>;

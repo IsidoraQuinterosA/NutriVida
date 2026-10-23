@@ -5,14 +5,11 @@ import BarraNavegacion from "./BarraNavegacion";
 
 describe("BarraNavegacion", () => {
   it("avisa la ruta del enlace al hacer clic en él", async () => {
-    // Arrange: un mock que registra con qué ruta lo llaman
     const onNavegar = vi.fn();
     render(<BarraNavegacion onNavegar={onNavegar} usuario={null} cantidadSolicitud={0} />);
 
-    // Act
     await userEvent.click(screen.getByRole("link", { name: "Servicios" }));
 
-    // Assert
     expect(onNavegar).toHaveBeenCalledTimes(1);
     expect(onNavegar).toHaveBeenCalledWith("/servicios");
   });
@@ -20,7 +17,6 @@ describe("BarraNavegacion", () => {
   it("no recarga la página al hacer clic en un enlace", () => {
     render(<BarraNavegacion onNavegar={() => {}} usuario={null} cantidadSolicitud={0} />);
 
-    // fireEvent.click devuelve false cuando el componente llamó a preventDefault()
     expect(fireEvent.click(screen.getByRole("link", { name: "Inicio" }))).toBe(false);
   });
 

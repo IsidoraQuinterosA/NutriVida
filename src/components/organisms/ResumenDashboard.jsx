@@ -1,7 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import TarjetaResumen from "../molecules/TarjetaResumen";
 
-// props.tarjetas: [{ titulo, numero, textoBoton, ruta }]
 function ResumenDashboard(props) {
   return (
     <Row>

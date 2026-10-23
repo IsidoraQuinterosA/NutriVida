@@ -1,6 +1,5 @@
 import FilaCitaAdmin from "../molecules/FilaCitaAdmin";
 
-// Tabla de citas. La usan Citas y el Historial de un usuario.
 function TablaCitas(props) {
   if (props.citas.length === 0) {
     return <p className="text-body-secondary">{props.mensajeVacio}</p>;

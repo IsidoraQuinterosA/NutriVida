@@ -1,5 +1,3 @@
-// Usuarios de ejemplo (DATOS FICTICIOS, solo para la simulación).
-// En un sistema real las contraseñas nunca se guardan así: las protege el backend.
 export const usuarios = [
   { id: 1, run: "111111111", nombre: "Administración", apellidos: "NutriVida", correo: "admin@nutrivida.cl", contrasena: "admin1234", telefono: "", direccion: "Temuco", rol: "administrador", nutricionistaId: null, activo: true },
   { id: 2, run: "152345674", nombre: "Carolina", apellidos: "Fuentes M.", correo: "carolina.fuentes@nutrivida.cl", contrasena: "nutri1234", telefono: "", direccion: "Temuco", rol: "nutricionista", nutricionistaId: "NUT001", activo: true },

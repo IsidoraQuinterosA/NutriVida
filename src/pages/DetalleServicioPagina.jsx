@@ -49,7 +49,6 @@ function DetalleServicioPagina() {
               servicio={servicio}
               categoriaNombre={obtenerCategoria(servicio.categoria).nombre}
               onAgregar={agregar}
-              // navigate(-1) vuelve a la página anterior, como el botón Atrás
               onVolver={() => navigate(-1)}
             />
           </Col>

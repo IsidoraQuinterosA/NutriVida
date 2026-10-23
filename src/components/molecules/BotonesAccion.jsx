@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Boton from "../atoms/Boton";
 
-// Botones Ver / Editar / Eliminar de una fila. Eliminar pide confirmación
-// usando estado propio (sin alert ni confirm del navegador).
 function BotonesAccion(props) {
   const [confirmando, setConfirmando] = useState(false);
 

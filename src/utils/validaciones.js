@@ -1,18 +1,10 @@
-// Reglas de validación del proyecto.
-// Cada función recibe un valor y devuelve un mensaje de error,
-// o un texto vacío ("") si el valor está bien.
-
 const patronRun = /^\d{6,8}[0-9Kk]$/;
 const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Calcula el dígito verificador de un RUN con el algoritmo módulo 11.
-// Ej: para "12345678" devuelve "5".
 function calcularDigitoVerificador(numero) {
   let suma = 0;
   let multiplicador = 2;
 
-  // Se recorre el número de derecha a izquierda,
-  // multiplicando cada dígito por 2, 3, 4, 5, 6, 7 y luego otra vez desde 2.
   for (let i = numero.length - 1; i >= 0; i--) {
     suma = suma + Number(numero[i]) * multiplicador;
     multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
@@ -107,8 +99,6 @@ export function validarRol(rol) {
   return "";
 }
 
-// ----- Validaciones generales (formularios del panel) -----
-
 export function validarObligatorio(valor, nombreCampo) {
   if (String(valor).trim() === "") return "El campo " + nombreCampo + " es obligatorio.";
 
@@ -122,21 +112,17 @@ export function validarNumeroPositivo(valor, nombreCampo) {
   return "";
 }
 
-// ----- Validaciones de la cita -----
-
 export function validarNutricionista(nutricionistaId) {
   if (nutricionistaId === "") return "Debes elegir un nutricionista.";
 
   return "";
 }
 
-// fecha viene como "AAAA-MM-DD". hoy se puede pasar para poder probar la función.
 export function validarFechaCita(fecha, nutricionista, hoy) {
   if (fecha === "") return "Debes elegir una fecha.";
   if (!nutricionista) return "Primero elige un nutricionista.";
   if (fecha < hoy) return "La fecha no puede ser anterior a hoy.";
 
-  // getDay(): 0 = domingo, 1 = lunes ... 6 = sábado
   const dia = new Date(fecha + "T00:00:00").getDay();
 
   if (!nutricionista.dias.includes(dia)) {
@@ -146,7 +132,6 @@ export function validarFechaCita(fecha, nutricionista, hoy) {
   return "";
 }
 
-// hora viene como "HH:MM". Como tienen el mismo formato, se pueden comparar como texto.
 export function validarHoraCita(hora, nutricionista) {
   if (hora === "") return "Debes elegir una hora.";
   if (!nutricionista) return "Primero elige un nutricionista.";

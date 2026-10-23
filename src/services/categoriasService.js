@@ -1,11 +1,9 @@
-// CRUD de categorías (tipos de servicio), con persistencia en localStorage.
 import { categorias as categoriasIniciales } from "../data/categorias";
 import { leer, guardar } from "./almacenamiento";
 import { listarPorCategoria } from "./serviciosService";
 
 const CLAVE = "nutrivida_categorias";
 
-// Convierte un nombre en un id para la dirección. Ej: "Taller grupal" -> "taller-grupal"
 export function crearIdDesdeNombre(nombre) {
   return nombre
     .trim()

@@ -10,7 +10,6 @@ describe("BotonesAccion", () => {
 
     await userEvent.click(screen.getByRole("button", { name: "Eliminar" }));
 
-    // Todavía no se eliminó: primero aparece la pregunta
     expect(onEliminar).not.toHaveBeenCalled();
     expect(screen.getByText("¿Eliminar?")).toBeInTheDocument();
 

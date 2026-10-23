@@ -9,16 +9,13 @@ describe("formatearPrecio", () => {
 
 describe("calcularTotal", () => {
   it("suma precio por cantidad de cada servicio", () => {
-    // Arrange: una solicitud con 2 servicios
     const items = [
-      { precio: 35000, cantidad: 1 }, // primera consulta
-      { precio: 15000, cantidad: 2 }, // taller para 2 personas
+      { precio: 35000, cantidad: 1 },
+      { precio: 15000, cantidad: 2 },
     ];
 
-    // Act
     const total = calcularTotal(items);
 
-    // Assert
     expect(total).toBe(65000);
   });
 

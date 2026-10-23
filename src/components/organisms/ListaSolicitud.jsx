@@ -2,7 +2,6 @@ import ItemSolicitud from "../molecules/ItemSolicitud";
 import Boton from "../atoms/Boton";
 import { formatearPrecio } from "../../utils/precios";
 
-// La solicitud en curso (el "carrito"): servicios elegidos, total y acciones
 function ListaSolicitud(props) {
   if (props.items.length === 0) {
     return (

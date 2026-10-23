@@ -5,7 +5,6 @@ import { useTituloPagina } from "../../hooks/useTituloPagina";
 import { obtenerUsuario, actualizarUsuario } from "../../services/usuariosService";
 import { listarNutricionistas } from "../../services/nutricionistasService";
 
-// Ruta: /admin/usuarios/:id/editar
 function EditarUsuario() {
   const navigate = useNavigate();
   const params = useParams();

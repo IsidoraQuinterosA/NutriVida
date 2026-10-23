@@ -13,7 +13,6 @@ const opcionesModalidad = [
   { valor: "Presencial (grupo)", texto: "Presencial (grupo)" },
 ];
 
-// Sirve para crear y para editar. Si llega props.servicioInicial, está en modo edición.
 function FormularioServicio(props) {
   const inicial = props.servicioInicial;
   const esEdicion = Boolean(inicial);

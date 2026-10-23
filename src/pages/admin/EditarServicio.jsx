@@ -5,7 +5,6 @@ import { useTituloPagina } from "../../hooks/useTituloPagina";
 import { obtenerServicio, actualizarServicio } from "../../services/serviciosService";
 import { listarCategorias } from "../../services/categoriasService";
 
-// Ruta: /admin/servicios/:codigo/editar
 function EditarServicio() {
   const navigate = useNavigate();
   const params = useParams();

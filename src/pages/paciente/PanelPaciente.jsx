@@ -14,7 +14,6 @@ function PanelPaciente() {
   useTituloPagina("Mi panel");
 
   const hoy = fechaHoyISO();
-  // Próximas citas: desde hoy en adelante y que sigan activas
   const proximas = ordenarCitas(listarPorPaciente(sesion.usuario.correo)).filter(
     (cita) => cita.fecha >= hoy && (cita.estado === "pendiente" || cita.estado === "confirmada")
   );

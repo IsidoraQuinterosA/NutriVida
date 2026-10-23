@@ -12,7 +12,6 @@ function LoginPage() {
   const [errorGeneral, setErrorGeneral] = useState("");
   useTituloPagina("Iniciar sesión");
 
-  // Se ejecuta solo cuando el formulario avisa que los campos son válidos
   function alIniciarSesion(datos) {
     const usuario = sesion.iniciarSesion(datos.correo, datos.contrasena);
 
@@ -21,7 +20,6 @@ function LoginPage() {
       return;
     }
 
-    // Cada rol llega a su propio panel
     navigate(rutaDelPanel(usuario.rol));
   }
 

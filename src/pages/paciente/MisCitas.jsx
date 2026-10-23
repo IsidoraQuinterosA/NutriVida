@@ -13,7 +13,6 @@ function MisCitas() {
   const sesion = useSesion();
   useTituloPagina("Mis citas");
 
-  // Las citas se guardan en el estado para que la pantalla se actualice al cancelar
   const [citas, setCitas] = useState(() => listarPorPaciente(sesion.usuario.correo));
 
   function cancelar(id) {
