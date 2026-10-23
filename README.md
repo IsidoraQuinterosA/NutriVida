@@ -60,6 +60,3 @@ npm run test:cov   # pruebas + reporte de cobertura
 | Nutricionista | carolina.fuentes@nutrivida.cl | nutri1234 |
 | Paciente | ana.perez@correo.cl | paciente123 |
 
-## Material complementario
-Carpeta de Drive con documentos del semestre (ERS y otros):
-https://drive.google.com/drive/folders/XXXXXXXXXX
