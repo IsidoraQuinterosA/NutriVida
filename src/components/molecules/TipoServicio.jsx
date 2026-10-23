@@ -1,10 +1,11 @@
 import Boton from "../atoms/Boton";
-import "../../App.css";
 
 function TipoServicio(props) {
+  
   return (
     <div className="tipo-servicio">
       <h3 className="tipo-titulo">{props.titulo}</h3>
+      {props.descripcion && <p className="small text-body-secondary">{props.descripcion}</p>}
 
       <div className="tipo-contenedor-boton">
         <Boton

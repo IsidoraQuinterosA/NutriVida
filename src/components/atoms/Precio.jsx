@@ -1,16 +1,16 @@
-import "../../App.css";
-
+import { formatearPrecio } from "../../utils/precios";
 
 function Precio(props) {
   return (
-    <div className="precio">
-      <span className="precio-simbolo">{props.moneda}$</span>
-      <span className="precio-valor">{props.valor}</span>
-      
-    </div>
+    <p className="precio mb-0">
+      {props.precioAnterior && (
+        <span className="text-decoration-line-through text-body-secondary me-2">
+          {formatearPrecio(props.precioAnterior)}
+        </span>
+      )}
+      <span className="precio-valor">{formatearPrecio(props.valor)}</span>
+    </p>
   );
 }
 
 export default Precio;
-
-
