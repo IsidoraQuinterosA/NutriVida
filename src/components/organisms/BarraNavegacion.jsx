@@ -19,9 +19,9 @@ function BarraNavegacion(props) {
   }
 
   return (
-    <Navbar expand="lg" bg="body-tertiary" collapseOnSelect>
+    <Navbar expand="lg" sticky="top" collapseOnSelect className="barra-principal">
       <Container>
-        <Navbar.Brand href="/" onClick={(e) => ir(e, "/")} className="d-flex align-items-center gap-2">
+        <Navbar.Brand href="/" onClick={(e) => ir(e, "/")} className="d-flex align-items-center gap-2 barra-marca">
           <Logo tamano="chico" alt="" />
           NutriVida
         </Navbar.Brand>
@@ -34,6 +34,7 @@ function BarraNavegacion(props) {
               <Nav.Link
                 key={enlace.ruta}
                 href={enlace.ruta}
+                active={enlace.ruta === props.rutaActual}
                 onClick={(e) => ir(e, enlace.ruta)}
               >
                 {enlace.texto}

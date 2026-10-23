@@ -35,10 +35,13 @@ function Inicio() {
   return (
     <PlantillaPrincipal>
       <Bienvenida
-        titulo="Clínica Nutricional NutriVida"
+        titulo="Clínica Nutricional"
+        tituloDestacado="NutriVida"
         descripcion="Asesoría nutricional personalizada en Temuco desde 2016. Nuestro equipo de 4 nutricionistas te acompaña a alcanzar tus objetivos: pérdida de peso, control de enfermedades metabólicas, nutrición deportiva y alimentación vegetariana o vegana."
         textoBoton="Ver servicios"
         onClickBoton={irAServicios}
+        textoBotonSecundario="Ver ofertas"
+        onClickBotonSecundario={() => navigate("/ofertas")}
       />
 
       <PorQueElegirnos
@@ -46,7 +49,7 @@ function Inicio() {
         beneficios={beneficios}
       />
 
-      <section className="bg-light py-5">
+      <section className="seccion-tinte py-5">
         <Container>
           <h2 className="mb-4">Nuestras categorías</h2>
           <ListaCategorias

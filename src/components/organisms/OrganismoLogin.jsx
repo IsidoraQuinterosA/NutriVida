@@ -41,10 +41,10 @@ function OrganismoLogin(props) {
   return (
     <Container className="py-5">
       <Row className="justify-content-center">
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={7} lg={5} xl={4} className="tarjeta-formulario">
 
           <Logo tamano="mediano" alt="" />
-          <h2>Iniciar sesión</h2>
+          <h2 className="titulo-formulario">Iniciar sesión</h2>
 
           {props.errorGeneral && (
             <div className="alert alert-danger" role="alert">{props.errorGeneral}</div>
@@ -80,7 +80,7 @@ function OrganismoLogin(props) {
               variante="primary"
             />
 
-            <p className="mt-3 mb-0">
+            <p className="mt-3 mb-0 enlace-formulario">
               ¿No tienes cuenta?{" "}
               <a href="/registro" onClick={irARegistro}>Regístrate</a>
             </p>
