@@ -1,6 +1,6 @@
 function EtiquetaDuracion(props) {
   return (
-    <span className="badge text-bg-secondary d-inline-block w-auto">
+    <span className="badge etiqueta-suave d-inline-block w-auto">
       {props.duracion} min
     </span>
   );

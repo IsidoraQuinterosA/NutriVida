@@ -1,9 +1,9 @@
 const colores = {
-  pendiente: "text-bg-warning",
-  confirmada: "text-bg-primary",
-  atendida: "text-bg-success",
-  cancelada: "text-bg-secondary",
-  inasistencia: "text-bg-danger",
+  pendiente: "estado-pendiente",
+  confirmada: "estado-confirmada",
+  atendida: "estado-atendida",
+  cancelada: "estado-cancelada",
+  inasistencia: "estado-inasistencia",
 };
 
 const textos = {

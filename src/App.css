@@ -1,3 +1,170 @@
+.btn {
+  --bs-btn-border-radius: 50rem;
+  --bs-btn-font-weight: 600;
+  --bs-btn-padding-x: 1.2rem;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  --bs-btn-padding-x: 0.85rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--verde);
+  --bs-btn-border-color: var(--verde);
+  --bs-btn-hover-bg: var(--verde-hover);
+  --bs-btn-hover-border-color: var(--verde-hover);
+  --bs-btn-active-bg: var(--verde-hover);
+  --bs-btn-active-border-color: var(--verde-hover);
+  --bs-btn-disabled-bg: var(--verde);
+  --bs-btn-disabled-border-color: var(--verde);
+  --bs-btn-focus-shadow-rgb: 35, 119, 90;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--verde);
+  --bs-btn-border-color: var(--verde);
+  --bs-btn-hover-color: var(--blanco);
+  --bs-btn-hover-bg: var(--verde);
+  --bs-btn-hover-border-color: var(--verde);
+  --bs-btn-active-color: var(--blanco);
+  --bs-btn-active-bg: var(--verde-hover);
+  --bs-btn-active-border-color: var(--verde-hover);
+  --bs-btn-focus-shadow-rgb: 35, 119, 90;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--texto-suave);
+  --bs-btn-border-color: var(--borde);
+  --bs-btn-hover-color: var(--verde-oscuro);
+  --bs-btn-hover-bg: var(--verde-suave);
+  --bs-btn-hover-border-color: var(--borde);
+  --bs-btn-active-color: var(--verde-oscuro);
+  --bs-btn-active-bg: var(--verde-suave);
+  --bs-btn-active-border-color: var(--borde);
+}
+
+.btn-success {
+  --bs-btn-bg: var(--verde-hoja);
+  --bs-btn-border-color: var(--verde-hoja);
+  --bs-btn-hover-bg: var(--verde);
+  --bs-btn-hover-border-color: var(--verde);
+  --bs-btn-active-bg: var(--verde);
+  --bs-btn-active-border-color: var(--verde);
+}
+
+.btn-ciruela {
+  --bs-btn-color: var(--blanco);
+  --bs-btn-bg: var(--ciruela);
+  --bs-btn-border-color: var(--ciruela);
+  --bs-btn-hover-color: var(--blanco);
+  --bs-btn-hover-bg: var(--ciruela-hover);
+  --bs-btn-hover-border-color: var(--ciruela-hover);
+  --bs-btn-active-color: var(--blanco);
+  --bs-btn-active-bg: var(--ciruela-hover);
+  --bs-btn-active-border-color: var(--ciruela-hover);
+  --bs-btn-focus-shadow-rgb: 122, 46, 114;
+}
+
+.btn-outline-ciruela {
+  --bs-btn-color: var(--ciruela);
+  --bs-btn-border-color: var(--ciruela);
+  --bs-btn-hover-color: var(--blanco);
+  --bs-btn-hover-bg: var(--ciruela);
+  --bs-btn-hover-border-color: var(--ciruela);
+  --bs-btn-active-color: var(--blanco);
+  --bs-btn-active-bg: var(--ciruela-hover);
+  --bs-btn-active-border-color: var(--ciruela-hover);
+  --bs-btn-focus-shadow-rgb: 122, 46, 114;
+}
+
+.form-control,
+.form-select {
+  border-color: var(--borde);
+  border-radius: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--verde-hoja);
+  box-shadow: 0 0 0 0.25rem rgba(47, 143, 104, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: var(--verde);
+  border-color: var(--verde);
+}
+
+.form-check-input:focus {
+  border-color: var(--verde-hoja);
+  box-shadow: 0 0 0 0.25rem rgba(47, 143, 104, 0.2);
+}
+
+.badge {
+  border-radius: 50rem;
+  font-weight: 600;
+  padding: 0.35em 0.75em;
+}
+
+.etiqueta-suave {
+  background-color: var(--verde-suave);
+  color: var(--verde-hover);
+}
+
+.etiqueta-online {
+  background-color: var(--ciruela-suave);
+  color: var(--ciruela);
+}
+
+.etiqueta-oferta {
+  background-color: var(--ciruela);
+  color: var(--blanco);
+}
+
+.estado-pendiente {
+  background-color: var(--ambar-suave);
+  color: var(--ambar);
+}
+
+.estado-confirmada {
+  background-color: var(--verde-suave);
+  color: var(--verde-hover);
+}
+
+.estado-atendida {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+.estado-cancelada {
+  background-color: #eef1ef;
+  color: var(--texto-suave);
+}
+
+.estado-inasistencia {
+  background-color: var(--ciruela-suave);
+  color: var(--ciruela);
+}
+
+.list-group {
+  --bs-list-group-active-bg: var(--ciruela);
+  --bs-list-group-active-border-color: var(--ciruela);
+  --bs-list-group-border-color: var(--borde);
+}
+
+.table {
+  --bs-table-border-color: var(--borde);
+}
+
+.table > thead {
+  --bs-table-bg: var(--verde-suave);
+  --bs-table-color: var(--verde-oscuro);
+}
+
 .titulo-formulario {
   color: #2b6cb0;
   font-weight: 700;
