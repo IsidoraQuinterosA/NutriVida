@@ -339,26 +339,25 @@
   overflow: visible;
 }
 
-.logo-animado-cruz {
-  fill: var(--verde-claro);
+.logo-animado-arbol {
+  fill: var(--verde-oscuro);
+  stroke: var(--verde-oscuro);
+  stroke-width: 0.49;
+  stroke-linejoin: round;
   transform-box: fill-box;
-  transform-origin: center;
-  animation: aparecer-cruz 0.8s ease-out both;
-}
-
-.logo-animado-hoja {
-  fill: var(--verde-hoja);
-  transform-box: fill-box;
-  transform-origin: 9% 100%;
+  transform-origin: 50% 100%;
   animation:
-    crecer-hoja 1s 0.6s cubic-bezier(0.2, 0.8, 0.3, 1.2) both,
-    mecer-hoja 4s 1.8s ease-in-out infinite;
+    crecer-arbol 1.2s cubic-bezier(0.2, 0.8, 0.3, 1.15) both,
+    mecer-arbol 5s 1.4s ease-in-out infinite;
 }
 
-@keyframes aparecer-cruz {
+@keyframes crecer-arbol {
   from {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.15);
+  }
+  60% {
+    opacity: 1;
   }
   to {
     opacity: 1;
@@ -366,33 +365,22 @@
   }
 }
 
-@keyframes crecer-hoja {
-  from {
-    opacity: 0;
-    transform: scale(0) rotate(-35deg);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-@keyframes mecer-hoja {
+@keyframes mecer-arbol {
   0%,
   100% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(-4deg);
+    transform: rotate(-1.5deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-animado-cruz,
-  .logo-animado-hoja {
+  .logo-animado-arbol {
     animation: none;
   }
 }
+
 
 .barra-principal {
   background-color: var(--blanco);

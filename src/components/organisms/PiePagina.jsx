@@ -21,7 +21,7 @@ function PiePagina(props) {
         <Row className="gy-4 text-start">
           <Col xs={12} md={5}>
             <a href="/" onClick={(e) => ir(e, "/")} className="pie-marca">
-              <Logo tamano="chico" alt="" />
+              <Logo tamano="chico" alt="" claro />
               NutriVida
             </a>
             <p className="mt-2">Clínica Nutricional en Temuco, Región de La Araucanía. Desde 2016.</p>
