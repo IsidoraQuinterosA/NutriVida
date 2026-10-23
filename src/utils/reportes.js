@@ -1,6 +1,3 @@
-// Funciones puras para los reportes del administrador.
-
-// Cuántas citas hay en cada estado
 export function contarPorEstado(citas) {
   const conteo = { pendiente: 0, confirmada: 0, atendida: 0, cancelada: 0, inasistencia: 0 };
 
@@ -11,7 +8,6 @@ export function contarPorEstado(citas) {
   return conteo;
 }
 
-// Cuántas citas tiene cada nutricionista
 export function contarPorNutricionista(citas, nutricionistas) {
   return nutricionistas.map((nutricionista) => ({
     id: nutricionista.id,
@@ -20,8 +16,6 @@ export function contarPorNutricionista(citas, nutricionistas) {
   }));
 }
 
-// Porcentaje de inasistencia: citas "inasistencia" sobre las citas que ya ocurrieron
-// (atendidas + inasistencias). Si no ha ocurrido ninguna, es 0.
 export function calcularTasaInasistencia(citas) {
   const conteo = contarPorEstado(citas);
   const ocurridas = conteo.atendida + conteo.inasistencia;
@@ -33,7 +27,6 @@ export function calcularTasaInasistencia(citas) {
   return Math.round((conteo.inasistencia / ocurridas) * 100);
 }
 
-// Suma lo cobrado en las citas atendidas
 export function calcularIngresos(citas) {
   return citas
     .filter((cita) => cita.estado === "atendida")

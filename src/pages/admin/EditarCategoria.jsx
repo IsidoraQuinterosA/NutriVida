@@ -4,7 +4,6 @@ import FormularioCategoria from "../../components/organisms/FormularioCategoria"
 import { useTituloPagina } from "../../hooks/useTituloPagina";
 import { obtenerCategoria, actualizarCategoria } from "../../services/categoriasService";
 
-// Ruta: /admin/categorias/:id/editar
 function EditarCategoria() {
   const navigate = useNavigate();
   const params = useParams();

@@ -1,4 +1,3 @@
-// Ficha clínica: mediciones y plan alimenticio de cada paciente (persistencia en localStorage).
 import { mediciones as medicionesIniciales, planes as planesIniciales } from "../data/fichas";
 import { leer, guardar } from "./almacenamiento";
 

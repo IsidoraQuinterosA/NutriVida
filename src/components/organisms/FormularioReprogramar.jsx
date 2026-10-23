@@ -4,7 +4,6 @@ import CampoFormulario from "../molecules/CampoFormulario";
 import Boton from "../atoms/Boton";
 import { validarFechaCita, validarHoraCita } from "../../utils/validaciones";
 
-// Nueva fecha y hora para una cita existente, con el mismo nutricionista
 function FormularioReprogramar(props) {
   const [fecha, setFecha] = useState(props.fechaActual);
   const [hora, setHora] = useState(props.horaActual);

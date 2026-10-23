@@ -1,5 +1,3 @@
-// Mediciones y planes alimenticios de ejemplo (DATOS FICTICIOS).
-// talla en centímetros, peso en kilos, cintura en centímetros.
 export const mediciones = [
   { id: 1, pacienteCorreo: "ana.perez@correo.cl", nutricionistaId: "NUT001", fecha: "2026-10-05", peso: 82.4, talla: 165, cintura: 98 },
   { id: 2, pacienteCorreo: "ana.perez@correo.cl", nutricionistaId: "NUT001", fecha: "2026-10-19", peso: 80.9, talla: 165, cintura: 96 },

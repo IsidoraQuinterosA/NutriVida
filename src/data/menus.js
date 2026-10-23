@@ -1,4 +1,3 @@
-// Enlaces del menú lateral de cada panel, según el rol del usuario.
 export const menus = {
   paciente: [
     { ruta: "/paciente", texto: "Resumen" },

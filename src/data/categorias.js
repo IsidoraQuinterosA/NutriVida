@@ -1,5 +1,3 @@
-// Categorías (tipos de servicio) del catálogo de NutriVida.
-// El "id" es el que se usa en la dirección: /categorias/plan-especializado
 export const categorias = [
   {
     id: "consulta",

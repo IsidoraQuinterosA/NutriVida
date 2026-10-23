@@ -5,9 +5,6 @@ import { useSesion } from "../../hooks/useSesion";
 import { useSolicitud } from "../../hooks/useSolicitud";
 import { rutaDelPanel } from "../../utils/roles";
 
-// Plantilla: arma la estructura común de las páginas (barra, contenido y pie).
-// Solo las páginas y las plantillas usan el router y los contextos.
-// La barra y el pie no los conocen: reciben todo por props.
 function PlantillaPrincipal(props) {
   const navigate = useNavigate();
   const sesion = useSesion();
@@ -28,7 +25,6 @@ function PlantillaPrincipal(props) {
         onCerrarSesion={cerrarSesion}
       />
 
-      {/* props.children es el contenido que cada página pone dentro de <PlantillaPrincipal> */}
       <main className="flex-grow-1">
         {props.children}
       </main>

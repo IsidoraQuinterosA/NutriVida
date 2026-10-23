@@ -1,5 +1,3 @@
-// Directorio de nutricionistas de NutriVida.
-// dias: números de los días que atiende (0 = domingo, 1 = lunes ... 6 = sábado).
 export const nutricionistas = [
   { id: "NUT001", nombre: "Nut. Carolina Fuentes M.", especialidad: "Obesidad y síndrome metabólico", dias: [1, 3, 5], diasTexto: "Lunes, Miércoles, Viernes", horaInicio: "09:00", horaFin: "17:00" },
   { id: "NUT002", nombre: "Nut. Rodrigo Sepúlveda A.", especialidad: "Nutrición deportiva y rendimiento", dias: [2, 4, 6], diasTexto: "Martes, Jueves, Sábado", horaInicio: "09:00", horaFin: "14:00" },

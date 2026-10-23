@@ -5,7 +5,6 @@ import { useTituloPagina } from "../../hooks/useTituloPagina";
 import { useSesion } from "../../hooks/useSesion";
 import { listarMediciones, obtenerPlan } from "../../services/fichaService";
 
-// El paciente solo ve SUS mediciones y SU plan (se buscan con su propio correo)
 function MiProgreso() {
   const sesion = useSesion();
   useTituloPagina("Mi progreso");

@@ -1,6 +1,5 @@
 function Boton(props) {
   const variante = props.variante || "primary";
-  // tamano="sm" hace un botón chico (útil en tablas)
   const tamano = props.tamano ? " btn-" + props.tamano : "";
 
   return (

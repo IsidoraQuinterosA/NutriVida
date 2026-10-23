@@ -5,12 +5,9 @@ import { calcularTotal, obtenerPrecioFinal } from "../utils/precios";
 
 const CLAVE = "nutrivida_solicitud";
 
-// La "solicitud en curso" (el carrito de NutriVida): los servicios que el paciente
-// eligió antes de confirmar su cita. Se guarda en localStorage para no perderla al recargar.
 function SolicitudProvider(props) {
   const [items, setItems] = useState(() => leer(CLAVE, []));
 
-  // Cada vez que cambian los items, se guardan
   useEffect(() => {
     guardar(CLAVE, items);
   }, [items]);

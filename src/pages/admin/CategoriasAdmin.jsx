@@ -19,7 +19,6 @@ function CategoriasAdmin() {
       setCategorias(listarCategorias());
       setError("");
     } catch (e) {
-      // No se puede eliminar una categoría que todavía tiene servicios
       setError(e.message);
     }
   }

@@ -3,7 +3,6 @@ import Boton from "../atoms/Boton";
 import { formatearFecha } from "../../utils/fechas";
 import { formatearPrecio } from "../../utils/precios";
 
-// Una cita del paciente. Solo se puede cancelar o reprogramar si está pendiente o confirmada.
 function TarjetaCita(props) {
   const sePuedeModificar = props.estado === "pendiente" || props.estado === "confirmada";
 

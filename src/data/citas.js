@@ -1,5 +1,3 @@
-// Citas de ejemplo (DATOS FICTICIOS).
-// estado: "pendiente" | "confirmada" | "atendida" | "cancelada" | "inasistencia"
 export const citas = [
   { id: 1, numero: "NV-0001", pacienteNombre: "Ana Pérez Soto", pacienteCorreo: "ana.perez@correo.cl", nutricionistaId: "NUT001", fecha: "2026-10-05", hora: "10:00", motivo: "Quiero bajar de peso y ordenar mis comidas.", servicios: [{ codigo: "CN001", nombre: "Primera consulta nutricional", precio: 35000, cantidad: 1 }], total: 35000, estado: "atendida" },
   { id: 2, numero: "NV-0002", pacienteNombre: "Ana Pérez Soto", pacienteCorreo: "ana.perez@correo.cl", nutricionistaId: "NUT001", fecha: "2026-10-19", hora: "10:00", motivo: "Control quincenal del plan.", servicios: [{ codigo: "CN003", nombre: "Control nutricional quincenal", precio: 22000, cantidad: 1 }], total: 22000, estado: "atendida" },

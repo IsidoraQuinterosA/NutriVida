@@ -1,7 +1,6 @@
 import { formatearFecha } from "../../utils/fechas";
 import { calcularImc } from "../../utils/mediciones";
 
-// Historial de mediciones de un paciente (lo ven el paciente y su nutricionista)
 function TablaMediciones(props) {
   if (props.mediciones.length === 0) {
     return <p className="text-body-secondary">Todavía no hay mediciones registradas.</p>;

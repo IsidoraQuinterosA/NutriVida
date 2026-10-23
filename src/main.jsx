@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// 1. Bootstrap primero, 2. estilos globales, 3. estilos de los componentes
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import './App.css'

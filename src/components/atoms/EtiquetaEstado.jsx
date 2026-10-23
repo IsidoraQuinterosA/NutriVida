@@ -1,4 +1,3 @@
-// Color de Bootstrap para cada estado de una cita
 const colores = {
   pendiente: "text-bg-warning",
   confirmada: "text-bg-primary",

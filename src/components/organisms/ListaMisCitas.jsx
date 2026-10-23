@@ -1,7 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import TarjetaCita from "../molecules/TarjetaCita";
 
-// Citas de un paciente en una grilla: 1 columna en celular, 2 en tablet y escritorio
 function ListaMisCitas(props) {
   if (props.citas.length === 0) {
     return <p className="text-body-secondary">{props.mensajeVacio}</p>;

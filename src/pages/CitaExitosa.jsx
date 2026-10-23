@@ -12,7 +12,6 @@ function CitaExitosa() {
   const sesion = useSesion();
   useTituloPagina("Cita registrada");
 
-  // La cita llega desde ConfirmarCita en el "state" de la navegación
   const cita = ubicacion.state ? ubicacion.state.cita : null;
 
   if (!cita) {

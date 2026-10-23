@@ -10,13 +10,11 @@ function Registro() {
   const [errorGeneral, setErrorGeneral] = useState("");
   useTituloPagina("Crear cuenta");
 
-  // Se ejecuta solo cuando el formulario avisa que todo está correcto
   function alRegistrarse(datos) {
     try {
       crearUsuario({ ...datos, rol: "paciente" });
       navigate("/login");
     } catch (error) {
-      // Por ejemplo: ya existe una cuenta con ese correo
       setErrorGeneral(error.message);
     }
   }

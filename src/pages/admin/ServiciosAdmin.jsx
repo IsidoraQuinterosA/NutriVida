@@ -9,7 +9,6 @@ import { listarCategorias } from "../../services/categoriasService";
 
 function ServiciosAdmin() {
   const navigate = useNavigate();
-  // Se guarda la lista en el estado para que la tabla se actualice al eliminar
   const [servicios, setServicios] = useState(() => listarServicios());
   useTituloPagina("Servicios");
 

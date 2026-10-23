@@ -17,7 +17,6 @@ function ReprogramarCita() {
 
   const cita = obtenerCita(params.id);
 
-  // Un paciente solo puede reprogramar sus propias citas
   if (!cita || cita.pacienteCorreo !== sesion.usuario.correo) {
     return (
       <PlantillaPanel titulo="Reprogramar cita">

@@ -12,9 +12,7 @@ const datosCita = {
   total: 10000,
 };
 
-// Prueba de integración: el servicio junto con localStorage real (jsdom).
 describe("citasService (CRUD con persistencia)", () => {
-  // Preparación: cada caso parte con el almacenamiento vacío
   beforeEach(() => {
     localStorage.clear();
   });

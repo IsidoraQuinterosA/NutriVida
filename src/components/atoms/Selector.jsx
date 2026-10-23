@@ -1,5 +1,3 @@
-// props.opciones es una lista de objetos { valor, texto }.
-// Ej: [{ valor: "paciente", texto: "Paciente" }]
 function Selector(props) {
   return (
     <select

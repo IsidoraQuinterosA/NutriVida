@@ -1,6 +1,5 @@
 import { formatearPrecio } from "../../utils/precios";
 
-// Tabla con los servicios de una cita (o de la solicitud en curso) y el total
 function ResumenServicios(props) {
   return (
     <div className="table-responsive mb-3">

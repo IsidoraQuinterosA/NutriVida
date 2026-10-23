@@ -1,4 +1,3 @@
-// CRUD de usuarios, con persistencia en localStorage.
 import { usuarios as usuariosIniciales } from "../data/usuarios";
 import { leer, guardar } from "./almacenamiento";
 
@@ -24,7 +23,6 @@ export function crearUsuario(datos) {
     throw new Error("Ya existe una cuenta con el correo " + datos.correo);
   }
 
-  // El nuevo id es el mayor id actual + 1
   const nuevoId = lista.reduce((mayor, u) => Math.max(mayor, u.id), 0) + 1;
   const nuevo = {
     rol: "paciente",
@@ -56,8 +54,6 @@ export function eliminarUsuario(id) {
   guardar(CLAVE, listarUsuarios().filter((u) => u.id !== Number(id)));
 }
 
-// Devuelve el usuario si el correo y la contraseña son correctos y la cuenta está activa.
-// Si no, devuelve null.
 export function validarCredenciales(correo, contrasena) {
   const usuario = buscarPorCorreo(correo);
 

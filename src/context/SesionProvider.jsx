@@ -5,11 +5,9 @@ import { leer, guardar, borrar } from "../services/almacenamiento";
 
 const CLAVE = "nutrivida_sesion";
 
-// Guarda quién inició sesión. Así cualquier componente sabe si hay sesión y con qué rol.
 function SesionProvider(props) {
   const [usuario, setUsuario] = useState(() => leer(CLAVE, null));
 
-  // Devuelve el usuario si los datos son correctos, o null si no lo son
   function iniciarSesion(correo, contrasena) {
     const encontrado = validarCredenciales(correo, contrasena);
 
@@ -17,7 +15,6 @@ function SesionProvider(props) {
       return null;
     }
 
-    // En la sesión NO se guarda la contraseña
     const datosSesion = {
       id: encontrado.id,
       run: encontrado.run,

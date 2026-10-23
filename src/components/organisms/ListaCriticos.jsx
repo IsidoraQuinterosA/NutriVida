@@ -1,6 +1,5 @@
 import Boton from "../atoms/Boton";
 
-// Servicios con pocos cupos disponibles
 function ListaCriticos(props) {
   if (props.servicios.length === 0) {
     return <p className="text-body-secondary">No hay servicios con pocos cupos.</p>;

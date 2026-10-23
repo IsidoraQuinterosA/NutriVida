@@ -14,7 +14,6 @@ function UsuariosAdmin() {
   const [error, setError] = useState("");
   useTituloPagina("Usuarios");
 
-  // El administrador no puede desactivarse ni eliminarse a sí mismo
   function esUnoMismo(id) {
     if (id === sesion.usuario.id) {
       setError("No puedes desactivar ni eliminar tu propia cuenta.");

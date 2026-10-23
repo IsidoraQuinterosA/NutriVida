@@ -14,8 +14,6 @@ import {
   validarMotivo,
 } from "../../utils/validaciones";
 
-// Formulario de confirmación de la cita (el "checkout" de NutriVida).
-// Si hay sesión, la página le pasa los datos de la persona en props.datosIniciales.
 function FormularioConfirmacion(props) {
   const [nombre, setNombre] = useState(props.datosIniciales.nombre);
   const [apellidos, setApellidos] = useState(props.datosIniciales.apellidos);
