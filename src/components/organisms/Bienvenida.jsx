@@ -4,21 +4,47 @@ import LogoAnimado from "../atoms/LogoAnimado";
 
 function Bienvenida(props) {
   return (
-    <section className="bg-light py-5 text-center">
+    <section className="bienvenida text-center">
+      <span className="hoja-decorativa hoja-uno" aria-hidden="true"></span>
+      <span className="hoja-decorativa hoja-dos" aria-hidden="true"></span>
+      <span className="hoja-decorativa hoja-tres" aria-hidden="true"></span>
+
       <Container>
         <Row className="justify-content-center">
-          <Col xs={12} lg={8}>
+          <Col xs={12} lg={9}>
             <LogoAnimado />
 
-            <h1 className="display-5 fw-bold">{props.titulo}</h1>
+            <h1 className="bienvenida-titulo">
+              {props.titulo} {props.tituloDestacado && <span>{props.tituloDestacado}</span>}
+            </h1>
 
             <p className="lead mb-4">{props.descripcion}</p>
 
-            <Boton
-              texto={props.textoBoton}
-              variante="primary"
-              onClick={props.onClickBoton}
-            />
+            <div className="d-flex flex-wrap justify-content-center gap-2">
+              <Boton
+                texto={props.textoBoton}
+                variante="primary"
+                onClick={props.onClickBoton}
+              />
+              {props.textoBotonSecundario && (
+                <Boton
+                  texto={props.textoBotonSecundario}
+                  variante="outline-ciruela"
+                  onClick={props.onClickBotonSecundario}
+                />
+              )}
+            </div>
+
+            {props.datos && (
+              <div className="bienvenida-datos">
+                {props.datos.map((dato) => (
+                  <div key={dato.texto}>
+                    <strong>{dato.numero}</strong>
+                    {dato.texto}
+                  </div>
+                ))}
+              </div>
+            )}
           </Col>
         </Row>
       </Container>
