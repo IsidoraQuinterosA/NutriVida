@@ -514,23 +514,6 @@
   transform: rotate(40deg);
 }
 
-.bienvenida-datos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem 2rem;
-  margin-top: 2.2rem;
-  color: var(--texto-suave);
-}
-
-.bienvenida-datos strong {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--verde-oscuro);
-  font-variant-numeric: tabular-nums;
-}
-
 .seccion-tinte {
   background-color: var(--verde-suave);
 }

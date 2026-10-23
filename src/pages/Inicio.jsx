@@ -7,7 +7,6 @@ import ListaCategorias from "../components/organisms/ListaCategorias";
 import InfoContacto from "../components/organisms/InfoContacto";
 import { useTituloPagina } from "../hooks/useTituloPagina";
 import { listarCategorias } from "../services/categoriasService";
-import { listarServicios } from "../services/serviciosService";
 import { clinica } from "../data/clinica";
 
 const beneficios = [
@@ -43,12 +42,6 @@ function Inicio() {
         onClickBoton={irAServicios}
         textoBotonSecundario="Ver ofertas"
         onClickBotonSecundario={() => navigate("/ofertas")}
-        datos={[
-          { numero: "2016", texto: "en Temuco" },
-          { numero: "4", texto: "nutricionistas" },
-          { numero: "60", texto: "pacientes por semana" },
-          { numero: listarServicios().length, texto: "servicios y planes" },
-        ]}
       />
 
       <PorQueElegirnos

@@ -34,17 +34,6 @@ function Bienvenida(props) {
                 />
               )}
             </div>
-
-            {props.datos && (
-              <div className="bienvenida-datos">
-                {props.datos.map((dato) => (
-                  <div key={dato.texto}>
-                    <strong>{dato.numero}</strong>
-                    {dato.texto}
-                  </div>
-                ))}
-              </div>
-            )}
           </Col>
         </Row>
       </Container>
