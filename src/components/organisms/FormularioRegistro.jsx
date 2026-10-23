@@ -63,7 +63,7 @@ function FormularioRegistro(props) {
   return (
     <Container className="py-5">
       <Row className="justify-content-center">
-        <Col xs={12} md={8} lg={6}>
+        <Col xs={12} md={8} lg={6} className="tarjeta-formulario">
 
           <Logo tamano="mediano" alt="" />
           <h2 className="titulo-formulario">Crear cuenta</h2>
