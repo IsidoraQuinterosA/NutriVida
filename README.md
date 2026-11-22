@@ -1,4 +1,4 @@
-# Equipo 6
+## Equipo 6
 
 ## Integrantes
 - Jairo Cid (jair.cid@duocuc.cl)
@@ -40,12 +40,28 @@ src/
 - React Bootstrap y Bootstrap 5
 - React Router
 - Vitest + Testing Library (pruebas unitarias)
+- Axios (comunicación con la API REST)
+
+## Backend
+El frontend consume la API REST de NutriVida (Node.js, Express, PostgreSQL y JWT):
+https://github.com/JairoCidM/NutriVida-backend
+
+Ahí están el inicio de sesión, el registro y la gestión de usuarios, y la documentación con Swagger.
 
 ## Cómo ejecutar el proyecto
+Primero hay que levantar el backend en la misma EC2, en el puerto 3000, siguiendo su README. Luego:
 ```
 npm install
 npm run dev
 ```
+Vite reenvía las solicitudes a `/api` hacia `http://localhost:3000`, así que el frontend no necesita la IP de la API.
+
+Para publicarlo en la EC2:
+```
+npm run build
+npm run preview -- --port 4173
+```
+La página queda en `http://IP_PUBLICA_EC2:4173`, con el puerto 4173 abierto en el grupo de seguridad.
 
 ## Pruebas
 ```
@@ -59,4 +75,3 @@ npm run test:cov   # pruebas + reporte de cobertura
 | Administrador | admin@nutrivida.cl | admin1234 |
 | Nutricionista | carolina.fuentes@nutrivida.cl | nutri1234 |
 | Paciente | ana.perez@correo.cl | paciente123 |
-

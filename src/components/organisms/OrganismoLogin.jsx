@@ -46,6 +46,10 @@ function OrganismoLogin(props) {
           <Logo tamano="mediano" alt="" />
           <h2 className="titulo-formulario">Iniciar sesión</h2>
 
+          {props.mensajeExito && (
+            <div className="alert alert-success" role="status">{props.mensajeExito}</div>
+          )}
+
           {props.errorGeneral && (
             <div className="alert alert-danger" role="alert">{props.errorGeneral}</div>
           )}
@@ -75,9 +79,10 @@ function OrganismoLogin(props) {
             />
 
             <Boton
-              texto="Iniciar Sesión"
+              texto={props.cargando ? "Ingresando..." : "Iniciar Sesión"}
               type="submit"
               variante="primary"
+              disabled={props.cargando}
             />
 
             <p className="mt-3 mb-0 enlace-formulario">
