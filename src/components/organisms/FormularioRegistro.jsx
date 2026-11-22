@@ -168,7 +168,7 @@ function FormularioRegistro(props) {
               error={errores.direccion}
             />
 
-            <Boton texto="Registrarse" type="submit" />
+            <Boton texto={props.cargando ? "Creando cuenta..." : "Registrarse"} type="submit" disabled={props.cargando} />
 
           <div className="registro-boton">
             <p className="mb-0">
