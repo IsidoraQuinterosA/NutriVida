@@ -1,40 +1,56 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SesionContext } from "./contextos";
-import { validarCredenciales } from "../services/usuariosService";
-import { leer, guardar, borrar } from "../services/almacenamiento";
+import { iniciarSesion as pedirInicioSesion, obtenerUsuarioActual } from "../services/authService";
+import { leerToken, guardarToken, borrarToken } from "../services/api";
+import { crearLoginDto, crearUsuarioDesdeApi } from "../dto/auth.dto";
 
 const CLAVE = "nutrivida_sesion";
 
+function leerUsuarioGuardado() {
+  const guardado = sessionStorage.getItem(CLAVE);
+  if (!guardado || !leerToken()) {
+    return null;
+  }
+  return JSON.parse(guardado);
+}
+
 function SesionProvider(props) {
-  const [usuario, setUsuario] = useState(() => leer(CLAVE, null));
+  const [usuario, setUsuario] = useState(leerUsuarioGuardado);
 
-  function iniciarSesion(correo, contrasena) {
-    const encontrado = validarCredenciales(correo, contrasena);
-
-    if (!encontrado) {
-      return null;
-    }
-
-    const datosSesion = {
-      id: encontrado.id,
-      run: encontrado.run,
-      nombre: encontrado.nombre,
-      apellidos: encontrado.apellidos,
-      correo: encontrado.correo,
-      telefono: encontrado.telefono,
-      direccion: encontrado.direccion,
-      rol: encontrado.rol,
-      nutricionistaId: encontrado.nutricionistaId,
-    };
-
-    setUsuario(datosSesion);
-    guardar(CLAVE, datosSesion);
-    return datosSesion;
+  function guardarUsuario(datos) {
+    sessionStorage.setItem(CLAVE, JSON.stringify(datos));
+    setUsuario(datos);
   }
 
   function cerrarSesion() {
+    borrarToken();
+    sessionStorage.removeItem(CLAVE);
     setUsuario(null);
-    borrar(CLAVE);
+  }
+
+  useEffect(() => {
+    function alVencerSesion() {
+      sessionStorage.removeItem(CLAVE);
+      setUsuario(null);
+    }
+
+    window.addEventListener("nutrivida:sesion-vencida", alVencerSesion);
+
+    if (leerToken()) {
+      obtenerUsuarioActual()
+        .then((datos) => guardarUsuario(crearUsuarioDesdeApi(datos)))
+        .catch(() => {});
+    }
+
+    return () => window.removeEventListener("nutrivida:sesion-vencida", alVencerSesion);
+  }, []);
+
+  async function iniciarSesion(correo, contrasena) {
+    const respuesta = await pedirInicioSesion(crearLoginDto({ correo, contrasena }));
+    guardarToken(respuesta.accessToken);
+    const datos = crearUsuarioDesdeApi(respuesta.usuario);
+    guardarUsuario(datos);
+    return datos;
   }
 
   return (
