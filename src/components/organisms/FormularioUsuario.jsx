@@ -123,7 +123,7 @@ function FormularioUsuario(props) {
 
       <div className="d-flex gap-2">
         <Boton texto="Cancelar" variante="outline-secondary" onClick={props.onCancelar} />
-        <Boton texto={esEdicion ? "Guardar cambios" : "Crear usuario"} type="submit" />
+        <Boton texto={props.cargando ? "Guardando..." : esEdicion ? "Guardar cambios" : "Crear usuario"} type="submit" disabled={props.cargando} />
       </div>
     </form>
   );
