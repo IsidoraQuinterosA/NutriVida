@@ -56,12 +56,21 @@ npm run dev
 ```
 Vite reenvía las solicitudes a `/api` hacia `http://localhost:3000`, así que el frontend no necesita la IP de la API.
 
-Para publicarlo en la EC2:
-```
-npm run build
-npm run preview -- --port 4173
-```
-La página queda en `http://IP_PUBLICA_EC2:4173`, con el puerto 4173 abierto en el grupo de seguridad.
+## Publicar en la EC2
+El frontend y el backend corren en la misma EC2. Vite publica el frontend en el puerto 4173 y reenvía `/api` al backend en el 3000, así que la página no necesita saber la IP de la API.
+
+1. En el grupo de seguridad de la EC2, abrir los puertos **4173** (frontend) y **3000** (Swagger) para la IP de quien va a usar la página.
+2. Dejar los dos procesos corriendo en segundo plano, para que sigan activos aunque se cierre VS Code:
+   ```
+   cd ~/NutriVida-backend
+   nohup npm start > ~/backend.log 2>&1 &
+   cd ~/NutriVida
+   nohup npm run publicar > ~/frontend.log 2>&1 &
+   ```
+3. Revisar que respondan: `curl -s localhost:3000/api/v1/health` y `curl -s -o /dev/null -w "%{http_code}" localhost:4173`.
+4. Abrir `http://IP_PUBLICA_EC2:4173` (la página) y `http://IP_PUBLICA_EC2:3000/api/docs` (Swagger) desde otro computador.
+
+La IP pública cambia cada vez que se reinicia el laboratorio de AWS Academy: hay que revisarla en EC2 antes de presentar. Para detener los procesos: `fuser -k 3000/tcp 4173/tcp`.
 
 ## Pruebas
 ```
