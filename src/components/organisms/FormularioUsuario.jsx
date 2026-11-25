@@ -81,7 +81,7 @@ function FormularioUsuario(props) {
       <Row>
         <Col xs={12} md={4}>
           <CampoFormulario label="RUN" id="run" name="run" placeholder="Ej: 123456785" value={run}
-            onChange={(e) => setRun(e.target.value)} error={errores.run} />
+            onChange={(e) => setRun(e.target.value)} error={errores.run} disabled={esEdicion} />
         </Col>
         <Col xs={12} md={4}>
           <CampoFormulario label="Nombres" id="nombre" name="nombre" value={nombre}
@@ -93,7 +93,7 @@ function FormularioUsuario(props) {
         </Col>
         <Col xs={12} md={6}>
           <CampoFormulario label="Correo electrónico" type="email" id="correo" name="correo" value={correo}
-            onChange={(e) => setCorreo(e.target.value)} error={errores.correo} />
+            onChange={(e) => setCorreo(e.target.value)} error={errores.correo} disabled={esEdicion} />
         </Col>
         <Col xs={12} md={6}>
           <CampoFormulario label={esEdicion ? "Nueva contraseña (opcional)" : "Contraseña"} type="password"

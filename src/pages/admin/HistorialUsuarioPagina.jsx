@@ -1,22 +1,39 @@
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import PlantillaPanel from "../../components/templates/PlantillaPanel";
 import TablaCitas from "../../components/organisms/TablaCitas";
 import { useTituloPagina } from "../../hooks/useTituloPagina";
-import { obtenerUsuario } from "../../services/usuariosService";
+import { obtenerUsuario } from "../../services/usuarioService";
 import { listarPorPaciente } from "../../services/citasService";
 import { agregarNombreNutricionista } from "../../services/nutricionistasService";
+import { obtenerMensajeError } from "../../services/api";
 import { ordenarCitas } from "../../utils/fechas";
 
 function HistorialUsuarioPagina() {
   const navigate = useNavigate();
   const params = useParams();
-  const usuario = obtenerUsuario(params.id);
+  const [usuario, setUsuario] = useState(null);
+  const [error, setError] = useState("");
   useTituloPagina("Historial del usuario");
+
+  useEffect(() => {
+    obtenerUsuario(params.id)
+      .then(setUsuario)
+      .catch((falla) => setError(obtenerMensajeError(falla)));
+  }, [params.id]);
+
+  if (error) {
+    return (
+      <PlantillaPanel titulo="Historial del usuario">
+        <div className="alert alert-danger" role="alert">{error}</div>
+      </PlantillaPanel>
+    );
+  }
 
   if (!usuario) {
     return (
       <PlantillaPanel titulo="Historial del usuario">
-        <p>No existe el usuario.</p>
+        <p role="status">Cargando historial...</p>
       </PlantillaPanel>
     );
   }
